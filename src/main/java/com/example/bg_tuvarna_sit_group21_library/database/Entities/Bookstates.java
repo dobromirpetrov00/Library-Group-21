@@ -39,4 +39,13 @@ public class Bookstates {
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "Bookstates{" +
+                "id=" + id +
+                ", exemplars=" + exemplars +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

@@ -26,36 +26,15 @@ public class Books implements Serializable {
     @Column(name = "isarchived", nullable = false, length = 30)
     private String isarchived;
 
-    public String getIsarchived() {
-        return isarchived;
+    @OneToOne(mappedBy = "bookBookid")
+    private Exemplars exemplars;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setIsarchived(String isarchived) {
-        this.isarchived = isarchived;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getBookname() {
@@ -66,12 +45,44 @@ public class Books implements Serializable {
         this.bookname = bookname;
     }
 
-    public Integer getId() {
-        return id;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getIsarchived() {
+        return isarchived;
+    }
+
+    public void setIsarchived(String isarchived) {
+        this.isarchived = isarchived;
+    }
+
+    public Exemplars getExemplars() {
+        return exemplars;
+    }
+
+    public void setExemplars(Exemplars exemplars) {
+        this.exemplars = exemplars;
     }
 
     @Override
@@ -83,6 +94,7 @@ public class Books implements Serializable {
                 ", genre='" + genre + '\'' +
                 ", year=" + year +
                 ", isarchived='" + isarchived + '\'' +
+                ", exemplars=" + exemplars +
                 '}';
     }
 }

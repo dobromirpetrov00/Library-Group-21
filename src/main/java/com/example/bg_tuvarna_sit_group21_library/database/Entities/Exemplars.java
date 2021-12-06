@@ -11,12 +11,20 @@ public class Exemplars {
     private Integer id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "state_stateid_stateid", referencedColumnName = "stateid")
+    @JoinColumn(name = "state_stateid", referencedColumnName = "stateid")
     private Bookstates stateStateid;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "book_bookid_bookid", nullable = false)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid")
     private Books bookBookid;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Bookstates getStateStateid() {
         return stateStateid;
@@ -34,11 +42,12 @@ public class Exemplars {
         this.bookBookid = bookBookid;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    @Override
+    public String toString() {
+        return "Exemplars{" +
+                "id=" + id +
+                ", stateStateid=" + stateStateid +
+                ", bookBookid=" + bookBookid +
+                '}';
     }
 }
