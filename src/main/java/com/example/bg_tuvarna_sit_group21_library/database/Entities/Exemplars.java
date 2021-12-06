@@ -10,13 +10,13 @@ public class Exemplars {
     @Column(name = "exemplarid", nullable = false)
     private Integer id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "book_bookid_bookid", nullable = false)
-    private Books bookBookid;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "state_stateid_stateid", referencedColumnName = "stateid")
     private Bookstates stateStateid;
+
+    @OneToOne(optional = false)
+    @JoinColumn(name = "book_bookid_bookid", nullable = false)
+    private Books bookBookid;
 
     public Bookstates getStateStateid() {
         return stateStateid;
