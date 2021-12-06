@@ -18,27 +18,5 @@ public class Lendinfos {
     @JoinColumn(name = "book_bookid", nullable = false)
     private Books bookBookid;
 
-    public Books getBookBookid() {
-        return bookBookid;
-    }
-
-    public void setBookBookid(Books bookBookid) {
-        this.bookBookid = bookBookid;
-    }
-
-    public Lendbooks getLendLendbooksid() {
-        return lendLendbooksid;
-    }
-
-    public void setLendLendbooksid(Lendbooks lendLendbooksid) {
-        this.lendLendbooksid = lendLendbooksid;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    
 }

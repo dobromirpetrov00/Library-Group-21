@@ -29,6 +29,10 @@ public class Books implements Serializable {
     @OneToOne(mappedBy = "bookBookid")
     private Exemplars exemplars;
 
+    @OneToOne(mappedBy = "books", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Booksstored booksstored;
+
     public Integer getId() {
         return id;
     }

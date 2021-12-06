@@ -19,20 +19,17 @@ public class Booksstored {
     @Column(name = "readingroom", nullable = false)
     private Integer readingroom;
 
-    public Integer getReadingroom() {
-        return readingroom;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "bookid")
+    private Books books;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setReadingroom(Integer readingroom) {
-        this.readingroom = readingroom;
-    }
-
-    public Integer getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Integer available) {
-        this.available = available;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getTotal() {
@@ -43,11 +40,38 @@ public class Booksstored {
         this.total = total;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getAvailable() {
+        return available;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAvailable(Integer available) {
+        this.available = available;
+    }
+
+    public Integer getReadingroom() {
+        return readingroom;
+    }
+
+    public void setReadingroom(Integer readingroom) {
+        this.readingroom = readingroom;
+    }
+
+    public Books getBooks() {
+        return books;
+    }
+
+    public void setBooks(Books books) {
+        this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Booksstored{" +
+                "id=" + id +
+                ", total=" + total +
+                ", available=" + available +
+                ", readingroom=" + readingroom +
+                ", books=" + books +
+                '}';
     }
 }
