@@ -10,13 +10,44 @@ public class Lendinfos {
     @Column(name = "lendinfoid", nullable = false)
     private Integer id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "lend_lendbooksid", nullable = false)
-    private Lendbooks lendLendbooksid;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "book_bookid", nullable = false)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid")
     private Books bookBookid;
 
-    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "lend_lendbooksid", referencedColumnName = "lendbooksid")
+    private Lendbooks lendLendbooksid;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Books getBookBookid() {
+        return bookBookid;
+    }
+
+    public void setBookBookid(Books bookBookid) {
+        this.bookBookid = bookBookid;
+    }
+
+    public Lendbooks getLendLendbooksid() {
+        return lendLendbooksid;
+    }
+
+    public void setLendLendbooksid(Lendbooks lendLendbooksid) {
+        this.lendLendbooksid = lendLendbooksid;
+    }
+
+    @Override
+    public String toString() {
+        return "Lendinfos{" +
+                "id=" + id +
+                ", bookBookid=" + bookBookid +
+                ", lendLendbooksid=" + lendLendbooksid +
+                '}';
+    }
 }

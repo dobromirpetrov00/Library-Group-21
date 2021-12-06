@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="bg.tu_varna.sit.group21.library" />
+          <factory-entry name="bg.tu_varna.sit.group21.library" value="a2d184ea-fc31-44e2-a1bf-5a0346713247" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

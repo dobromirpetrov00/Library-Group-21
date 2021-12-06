@@ -33,6 +33,9 @@ public class Books implements Serializable {
     @PrimaryKeyJoinColumn
     private Booksstored booksstored;
 
+    @OneToOne(mappedBy = "bookBookid")
+    private Lendinfos lendinfos;
+
     public Integer getId() {
         return id;
     }
@@ -89,6 +92,22 @@ public class Books implements Serializable {
         this.exemplars = exemplars;
     }
 
+    public Booksstored getBooksstored() {
+        return booksstored;
+    }
+
+    public void setBooksstored(Booksstored booksstored) {
+        this.booksstored = booksstored;
+    }
+
+    public Lendinfos getLendinfos() {
+        return lendinfos;
+    }
+
+    public void setLendinfos(Lendinfos lendinfos) {
+        this.lendinfos = lendinfos;
+    }
+
     @Override
     public String toString() {
         return "Books{" +
@@ -99,6 +118,8 @@ public class Books implements Serializable {
                 ", year=" + year +
                 ", isarchived='" + isarchived + '\'' +
                 ", exemplars=" + exemplars +
+                ", booksstored=" + booksstored +
+                ", lendinfos=" + lendinfos +
                 '}';
     }
 }
