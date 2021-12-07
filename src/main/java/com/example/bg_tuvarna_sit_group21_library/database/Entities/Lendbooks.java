@@ -16,9 +16,10 @@ public class Lendbooks {
     @OneToOne(mappedBy = "lendLendbooksid")
     private Lendinfos lendinfos;
 
+    ////////////////////////////////////////////
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_userid", nullable = false)
     private Users usersUserid;
+    ////////////////////////////////////////////
 
-    
 }

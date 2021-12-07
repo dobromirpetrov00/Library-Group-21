@@ -13,19 +13,5 @@ public class Usertypes {
     @Column(name = "usertype", nullable = false, length = 30)
     private String usertype;
 
-    public String getUsertype() {
-        return usertype;
-    }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

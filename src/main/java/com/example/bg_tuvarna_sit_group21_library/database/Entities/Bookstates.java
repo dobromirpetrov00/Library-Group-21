@@ -1,6 +1,7 @@
 package com.example.bg_tuvarna_sit_group21_library.database.Entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "bookstates")
@@ -10,8 +11,8 @@ public class Bookstates {
     @Column(name = "stateid", nullable = false)
     private Integer id;
 
-    @OneToOne(mappedBy = "stateStateid")
-    private Exemplars exemplars;
+    @OneToMany(mappedBy = "stateStateid")
+    private Set<Exemplars> exemplarsSet;
 
     @Column(name = "state", nullable = false, length = 30)
     private String state;
@@ -24,12 +25,12 @@ public class Bookstates {
         this.id = id;
     }
 
-    public Exemplars getExemplars() {
-        return exemplars;
+    public Set<Exemplars> getExemplarsSet() {
+        return exemplarsSet;
     }
 
-    public void setExemplars(Exemplars exemplars) {
-        this.exemplars = exemplars;
+    public void setExemplarsSet(Set<Exemplars> exemplarsSet) {
+        this.exemplarsSet = exemplarsSet;
     }
 
     public String getState() {
@@ -44,7 +45,7 @@ public class Bookstates {
     public String toString() {
         return "Bookstates{" +
                 "id=" + id +
-                ", exemplars=" + exemplars +
+                ", exemplarsSet=" + exemplarsSet +
                 ", state='" + state + '\'' +
                 '}';
     }

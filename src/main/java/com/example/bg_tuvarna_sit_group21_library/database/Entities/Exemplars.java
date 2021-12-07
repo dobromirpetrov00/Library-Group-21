@@ -10,7 +10,7 @@ public class Exemplars {
     @Column(name = "exemplarid", nullable = false)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "state_stateid", referencedColumnName = "stateid")
     private Bookstates stateStateid;
 
