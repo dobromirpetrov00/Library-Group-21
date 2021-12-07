@@ -21,7 +21,7 @@ public class Booksstored {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "bookid")
+    @JoinColumn(name = "bookid", nullable = false)
     private Books books;
 
     public Integer getId() {

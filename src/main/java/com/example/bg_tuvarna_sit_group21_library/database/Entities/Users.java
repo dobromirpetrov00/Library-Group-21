@@ -22,19 +22,24 @@ public class Users {
     @Column(name = "rating", nullable = false, length = 30)
     private String rating;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "status_statusid",referencedColumnName = "statusid", nullable = false)
+    private Statuses statusStatusid;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_usertypeid", referencedColumnName = "usertypeid", nullable = false)
+    private Usertypes userUsertypeid;
+
+    @OneToOne(mappedBy = "usersUserid")
+    private Forms forms;
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private UserInfos userInfos;
+
     ////////////////////////////////////////////
     @ManyToOne(optional = false)
     @JoinColumn(name = "lend_lendbooksid", nullable = false)
     private Lendbooks lendLendbooksid;
     ////////////////////////////////////////////
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "status_statusid", nullable = false)
-    private Statuses statusStatusid;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_usertypeid", nullable = false)
-    private Usertypes userUsertypeid;
-
-
 }

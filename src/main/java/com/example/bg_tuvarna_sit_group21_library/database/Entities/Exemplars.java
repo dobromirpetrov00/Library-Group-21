@@ -11,11 +11,11 @@ public class Exemplars {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "state_stateid", referencedColumnName = "stateid")
+    @JoinColumn(name = "state_stateid", referencedColumnName = "stateid", nullable = false)
     private Bookstates stateStateid;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid")
+    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid", nullable = false)
     private Books bookBookid;
 
     public Integer getId() {

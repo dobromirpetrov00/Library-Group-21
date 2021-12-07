@@ -19,20 +19,17 @@ public class UserInfos {
     @Column(name = "email", nullable = false, length = 30)
     private String email;
 
-    public String getEmail() {
-        return email;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "userid", nullable = false)
+    private Users users;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -43,11 +40,38 @@ public class UserInfos {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfos{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", users=" + users +
+                '}';
     }
 }

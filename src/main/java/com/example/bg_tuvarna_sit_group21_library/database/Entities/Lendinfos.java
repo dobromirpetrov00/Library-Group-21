@@ -11,11 +11,11 @@ public class Lendinfos {
     private Integer id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid")
+    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid", nullable = false)
     private Books bookBookid;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lend_lendbooksid", referencedColumnName = "lendbooksid")
+    @JoinColumn(name = "lend_lendbooksid", referencedColumnName = "lendbooksid", nullable = false)
     private Lendbooks lendLendbooksid;
 
     public Integer getId() {

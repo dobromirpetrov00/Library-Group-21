@@ -13,16 +13,16 @@ public class Forms {
     @Column(name = "creationdate", nullable = false)
     private Integer creationdate;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_userid", nullable = false)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_userid",referencedColumnName = "userid", nullable = false)
     private Users usersUserid;
 
-    public Users getUserUserid() {
-        return usersUserid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserUserid(Users usersUserid) {
-        this.usersUserid = usersUserid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getCreationdate() {
@@ -33,11 +33,20 @@ public class Forms {
         this.creationdate = creationdate;
     }
 
-    public Integer getId() {
-        return id;
+    public Users getUsersUserid() {
+        return usersUserid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUsersUserid(Users usersUserid) {
+        this.usersUserid = usersUserid;
+    }
+
+    @Override
+    public String toString() {
+        return "Forms{" +
+                "id=" + id +
+                ", creationdate=" + creationdate +
+                ", usersUserid=" + usersUserid +
+                '}';
     }
 }
