@@ -16,10 +16,49 @@ public class Lendbooks {
     @OneToOne(mappedBy = "lendLendbooksid")
     private Lendinfos lendinfos;
 
-    ////////////////////////////////////////////
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_userid", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_userid", referencedColumnName = "userid", nullable = false)
     private Users usersUserid;
-    ////////////////////////////////////////////
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getLenddate() {
+        return lenddate;
+    }
+
+    public void setLenddate(Integer lenddate) {
+        this.lenddate = lenddate;
+    }
+
+    public Lendinfos getLendinfos() {
+        return lendinfos;
+    }
+
+    public void setLendinfos(Lendinfos lendinfos) {
+        this.lendinfos = lendinfos;
+    }
+
+    public Users getUsersUserid() {
+        return usersUserid;
+    }
+
+    public void setUsersUserid(Users usersUserid) {
+        this.usersUserid = usersUserid;
+    }
+
+    @Override
+    public String toString() {
+        return "Lendbooks{" +
+                "id=" + id +
+                ", lenddate=" + lenddate +
+                ", lendinfos=" + lendinfos +
+                ", usersUserid=" + usersUserid +
+                '}';
+    }
 }
