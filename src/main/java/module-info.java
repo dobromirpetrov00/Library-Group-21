@@ -23,6 +23,12 @@ module com.example.bg_tuvarna_sit_group21_library {
     exports com.example.bg_tuvarna_sit_group21_library.application;
     opens com.example.bg_tuvarna_sit_group21_library.application to javafx.fxml;
 
-    exports com.example.bg_tuvarna_sit_group21_library.controllers;
-    opens com.example.bg_tuvarna_sit_group21_library.controllers to javafx.fxml;
+    exports com.example.bg_tuvarna_sit_group21_library.presentation.models;
+    opens com.example.bg_tuvarna_sit_group21_library.presentation.models to javafx.fxml;
+
+    //exports com.example.bg_tuvarna_sit_group21_library.presentation;
+    //opens com.example.bg_tuvarna_sit_group21_library.presentation to javafx.fxml;
+
+    exports com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
+    opens com.example.bg_tuvarna_sit_group21_library.presentation.controllers to javafx.fxml;
 }

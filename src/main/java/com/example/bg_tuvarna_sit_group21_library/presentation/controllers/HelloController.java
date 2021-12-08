@@ -1,4 +1,4 @@
-package com.example.bg_tuvarna_sit_group21_library.controllers;
+package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
