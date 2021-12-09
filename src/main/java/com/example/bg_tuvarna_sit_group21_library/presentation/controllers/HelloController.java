@@ -1,14 +1,47 @@
 package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 
+import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Button operatorLoginButton;
+    @FXML
+    private Button adminLoginButton;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void onOperatorLoginButtonClick(ActionEvent actionEvent){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.operatorLoginView));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.setTitle("Operator Login");
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void onAdminLoginButtonClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminLoginView));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.setTitle("Admin Login");
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
