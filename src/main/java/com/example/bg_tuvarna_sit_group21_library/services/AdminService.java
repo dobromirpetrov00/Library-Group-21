@@ -1,6 +1,18 @@
 package com.example.bg_tuvarna_sit_group21_library.services;
 
+import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class AdminService {
     private final UserRepository repository = UserRepository.getInstance();
@@ -13,6 +25,37 @@ public class AdminService {
         public static final AdminService INSTANCE = new AdminService();
     }
 
-    public boolean login = false;
-    
+    public ObservableList<UsersListViewModel> getAllUsers() {
+        List<Users> users = repository.getAllUsers();
+
+        return FXCollections.observableList(
+                users
+                        .stream()
+                        .map(t -> new UsersListViewModel(
+                                t.getId(),
+                                t.getUsername(),
+                                t.getPassword(),
+                                t.getApprovaldate(),
+                                t.getRating(),
+                                t.getStatusStatusid().getId(),
+                                t.getUserUsertypeid().getId()
+                        )).collect(Collectors.toList()));
+    }
+
+
+
+    public boolean adminLogin(UsersListViewModel a) {
+
+        ObservableList<UsersListViewModel> allUsers = getAllUsers();
+        boolean login = false;
+
+        for(UsersListViewModel admin:allUsers) {
+            if(admin.getUsername().equals(a.getUsername())) {
+                if(admin.getPassword().equals(a.getPassword()))
+                    login=true;
+            }
+        }
+
+        return login;
+    }
 }

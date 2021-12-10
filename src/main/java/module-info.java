@@ -12,6 +12,7 @@ module com.example.bg_tuvarna_sit_group21_library {
     requires java.persistence;
     requires log4j;
     requires java.naming;
+    requires java.sql;
     requires org.hibernate.orm.core;
 
     opens com.example.bg_tuvarna_sit_group21_library.database.Connect to org.hibernate.orm.core;

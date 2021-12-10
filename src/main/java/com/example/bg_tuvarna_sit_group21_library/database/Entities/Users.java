@@ -41,6 +41,23 @@ public class Users {
     @OneToMany(mappedBy = "usersUserid")
     private Set<Lendbooks> lendbooksSet;
 
+    public Users(){
+
+    }
+
+//    public Users(Integer id, String username, String password, Integer approvaldate, String rating, Statuses statusStatusid, Usertypes userUsertypeid, Forms forms, UserInfos userInfos, Set<Lendbooks> lendbooksSet) {
+//        this.id = id;
+//        this.username = username;
+//        this.password = password;
+//        this.approvaldate = approvaldate;
+//        this.rating = rating;
+//        this.statusStatusid = statusStatusid;
+//        this.userUsertypeid = userUsertypeid;
+//        this.forms = forms;
+//        this.userInfos = userInfos;
+//        this.lendbooksSet = lendbooksSet;
+//    }
+
     public Integer getId() {
         return id;
     }
@@ -57,9 +74,7 @@ public class Users {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
 
     public void setPassword(String password) {
         this.password = password;

@@ -18,6 +18,9 @@ public class HelloController {
     @FXML
     public void onOperatorLoginButtonClick(ActionEvent actionEvent){
         try {
+            Stage stage2 = (Stage) operatorLoginButton.getScene().getWindow();
+            stage2.close();
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.operatorLoginView));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
@@ -33,6 +36,9 @@ public class HelloController {
 
     public void onAdminLoginButtonClick(ActionEvent actionEvent) {
         try {
+            Stage stage2 = (Stage) adminLoginButton.getScene().getWindow();
+            stage2.close();
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminLoginView));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();

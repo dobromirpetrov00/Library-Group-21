@@ -41,12 +41,12 @@ public class Statuses {
         this.usersSet = usersSet;
     }
 
-    @Override
-    public String toString() {
-        return "Statuses{" +
-                "id=" + id +
-                ", status='" + status + '\'' +
-                ", usersSet=" + usersSet +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Statuses{" +
+//                "id=" + id +
+//                ", status='" + status + '\'' +
+//                ", usersSet=" + usersSet +
+//                '}';
+//    }
 }

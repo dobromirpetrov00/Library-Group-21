@@ -17,7 +17,7 @@ public class Lendbooks {
     private Lendinfos lendinfos;
 
     @ManyToOne
-    @JoinColumn(name = "user_userid", referencedColumnName = "userid", nullable = false)
+    @JoinColumn(name = "user_userid", nullable = false)
     private Users usersUserid;
 
     public Integer getId() {

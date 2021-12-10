@@ -11,16 +11,16 @@
 
 <AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController">
          <children>
+      <ImageView fitHeight="105.0" fitWidth="659.0">
+         <image>
+            <Image url="@../../../images/2560px-Dark-brown-solid-color-background.jpg" />
+         </image>
+      </ImageView>
             <ImageView fitHeight="263.0" fitWidth="659.0" layoutY="102.0">
                <image>
                   <Image url="@../../../images/adminLoginImage.jpg" />
                </image>
             </ImageView>
-      <ImageView fitHeight="117.0" fitWidth="659.0">
-         <image>
-            <Image url="@../../../../../../../../Users/User/Desktop/2560px-Dark-brown-solid-color-background.jpg" />
-         </image>
-      </ImageView>
       <Label alignment="CENTER" layoutX="89.0" layoutY="6.0" prefHeight="105.0" prefWidth="481.0" text="ADMIN LOGIN">
          <font>
             <Font name="System Bold" size="70.0" />
@@ -39,5 +39,10 @@
       </Label>
       <PasswordField fx:id="passwordField" layoutX="362.0" layoutY="189.0" />
       <TextField fx:id="usernameField" layoutX="148.0" layoutY="189.0" />
+      <Label fx:id="imageShow" layoutX="129.0" layoutY="279.0" prefHeight="77.0" prefWidth="403.0" textFill="WHITE" />
+      <Label fx:id="labelWrongInfo" layoutX="169.0" layoutY="306.0" prefHeight="24.0" prefWidth="323.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font></Label>
          </children>
 </AnchorPane>

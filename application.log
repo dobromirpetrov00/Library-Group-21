@@ -1,0 +1,306 @@
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failedjava.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failed java.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection  - Initial SessionFactory created failed java.lang.NoClassDefFoundError: java/sql/SQLException
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+line 1:8: unexpected token: *
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1380)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1142)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:825)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:336)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:200)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:294)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:622)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:734)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:834)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository.getAllUsers(UserRepository.java:27)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.getAllUsers(AdminService.java:26)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.adminLogin(AdminService.java:38)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController.onButtonClick(AdminLoginController.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1782)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1670)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8879)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:200)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:206)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3851)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.access$1200(Scene.java:3579)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1849)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2588)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:397)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:434)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:433)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get users error: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: * near line 1, column 8 [select * from users]
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get users error: org.hibernate.InstantiationException: No default constructor for entity:  : com.example.bg_tuvarna_sit_group21_library.database.Entities.Users
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+line 1:8: unexpected token: *
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1380)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1142)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:825)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:336)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:200)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:294)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:622)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:734)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:834)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository.getAllUsers(UserRepository.java:27)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.getAllUsers(AdminService.java:26)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.adminLogin(AdminService.java:38)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController.onButtonClick(AdminLoginController.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1782)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1670)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8879)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:200)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:206)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3851)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.access$1200(Scene.java:3579)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1849)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2588)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:397)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:434)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:433)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get users error: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: * near line 1, column 8 [SELECT * FROM library.users WHERE userid = 1]
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+[JavaFX Application Thread] ERROR org.hibernate.hql.internal.ast.ErrorTracker  - line 1:8: unexpected token: *
+line 1:8: unexpected token: *
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1380)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1142)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:825)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:336)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:200)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:294)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:622)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:734)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:834)
+	at org.hibernate.orm.core@5.6.1.Final/org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository.getAllUsers(UserRepository.java:29)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.getAllUsers(AdminService.java:29)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.services.AdminService.adminLogin(AdminService.java:49)
+	at com.example.bg_tuvarna_sit_group21_library/com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController.onButtonClick(AdminLoginController.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1782)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1670)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8879)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:200)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:206)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3851)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.access$1200(Scene.java:3579)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1849)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2588)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:397)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:434)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:433)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get users error: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: * near line 1, column 8 [SELECT * FROM library.users]
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get users error: Ordinal parameter not bound : 1
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Sorry, the main fxm could not be loaded.
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
