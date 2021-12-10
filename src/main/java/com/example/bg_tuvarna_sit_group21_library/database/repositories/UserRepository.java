@@ -28,9 +28,9 @@ public class UserRepository {
             log.info("Get all users");
         } catch (Exception ex) {
             log.error("Get users error: " + ex.getMessage());
+            Connection.openSessionClose();
         } finally {
             transaction.commit();
-            Connection.openSessionClose();
         }
 
         return users;

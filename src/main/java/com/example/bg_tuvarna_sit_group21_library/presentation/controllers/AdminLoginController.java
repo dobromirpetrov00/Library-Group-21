@@ -55,7 +55,7 @@ public class AdminLoginController {
     private static final Logger log = Logger.getLogger(AdminLoginController.class);
 
     @FXML
-    public void onButtonClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException, SQLException {
+    public void onButtonClick(ActionEvent actionEvent) throws IOException {
 
         UsersListViewModel admintoLogin = new UsersListViewModel(usernameField.getText().toString(),passwordField.getText().toString());
         PropertyConfigurator.configure(AdminLoginController.class.getResource(Constants.Configurations.LOG4J_PROPERTIES));
@@ -76,7 +76,6 @@ public class AdminLoginController {
             labelWrongInfo.setText("Invalid username or password");
             log.error("Wrong username or password");
             imageShow.setStyle("-fx-background-color: #851b1b");
-            //System.exit(-1);
         }
     }
 }
