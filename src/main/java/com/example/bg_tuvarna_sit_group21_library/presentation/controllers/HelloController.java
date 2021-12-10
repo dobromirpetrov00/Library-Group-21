@@ -17,6 +17,7 @@ public class HelloController {
 
     @FXML
     public void onOperatorLoginButtonClick(ActionEvent actionEvent){
+
         try {
             Stage stage2 = (Stage) operatorLoginButton.getScene().getWindow();
             stage2.close();

@@ -70,7 +70,7 @@ public class AdminLoginController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setResizable(false);
-            stage.setTitle("Admin Login");
+            stage.setTitle("Administrator - " + usernameField.getText());
             stage.show();
         } else {
             labelWrongInfo.setText("Invalid username or password");
