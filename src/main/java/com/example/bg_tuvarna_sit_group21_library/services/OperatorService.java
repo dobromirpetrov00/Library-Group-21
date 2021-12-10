@@ -46,8 +46,9 @@ public class OperatorService {
 
         for(UsersListViewModel oper:allUsers) {
             if(oper.getUsername().equals(a.getUsername())) {
-                if(oper.getPassword().equals(a.getPassword()))
-                    login=true;
+                if (oper.getPassword().equals(a.getPassword()))
+                    if (oper.getUser_usertypeid()== 2)
+                        login = true;
             }
         }
 

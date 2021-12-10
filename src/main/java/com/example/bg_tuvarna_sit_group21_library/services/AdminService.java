@@ -54,7 +54,8 @@ public class AdminService {
         for(UsersListViewModel admin:allUsers) {
             if(admin.getUsername().equals(a.getUsername())) {
                 if(admin.getPassword().equals(a.getPassword()))
-                    login=true;
+                    if(admin.getUser_usertypeid()==1)
+                        login=true;
             }
         }
 
