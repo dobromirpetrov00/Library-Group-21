@@ -44,8 +44,6 @@ public class AdminService {
                         )).collect(Collectors.toList()));
     }
 
-
-
     public boolean adminLogin(UsersListViewModel a) {
 
         ObservableList<UsersListViewModel> allUsers = getAllUsers();
@@ -60,5 +58,13 @@ public class AdminService {
         }
 
         return login;
+    }
+
+    public void createOperator(Users a){
+        repository.createUser(a);
+    }
+
+    public Integer returnLastId(){
+        return repository.getLastId();
     }
 }

@@ -45,18 +45,29 @@ public class Users {
 
     }
 
-//    public Users(Integer id, String username, String password, Integer approvaldate, String rating, Statuses statusStatusid, Usertypes userUsertypeid, Forms forms, UserInfos userInfos, Set<Lendbooks> lendbooksSet) {
-//        this.id = id;
-//        this.username = username;
-//        this.password = password;
-//        this.approvaldate = approvaldate;
-//        this.rating = rating;
-//        this.statusStatusid = statusStatusid;
-//        this.userUsertypeid = userUsertypeid;
-//        this.forms = forms;
-//        this.userInfos = userInfos;
-//        this.lendbooksSet = lendbooksSet;
+//    public Users(Statuses statusStatusid, Usertypes userUsertypeid){
+//        this.statusStatusid=statusStatusid;
+//        this.userUsertypeid=userUsertypeid;
 //    }
+
+    public Users(String username, String password, Integer approvaldate, String rating, Statuses statusStatusid, Usertypes userUsertypeid) {
+        this.username = username;
+        this.password = password;
+        this.approvaldate = approvaldate;
+        this.rating = rating;
+        this.statusStatusid = statusStatusid;
+        this.userUsertypeid = userUsertypeid;
+    }
+
+    public Users(Integer id, String username, String password, Integer approvaldate, String rating, Statuses statusStatusid, Usertypes userUsertypeid) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.approvaldate = approvaldate;
+        this.rating = rating;
+        this.statusStatusid = statusStatusid;
+        this.userUsertypeid = userUsertypeid;
+    }
 
     public Integer getId() {
         return id;

@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,4 +36,28 @@ public class UserRepository {
 
         return users;
     }
+
+    public void createUser(Users user){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.save(user);
+            log.info("User created successfully");
+        } catch (Exception ex) {
+            log.error("Insert user error: " + ex.getMessage());
+            Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public Integer getLastId() {
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Integer lastId = ((BigInteger) session.createSQLQuery("SELECT LAST_INSERT_ID()").uniqueResult()).intValue();
+
+        return lastId;
+    }
+
 }

@@ -48,7 +48,7 @@ public class OperatorLoginController {
             Stage stage2 = (Stage) operatorLogin.getScene().getWindow();
             stage2.close();
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminView));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.operatorView));
             Parent root = (Parent) fxmlLoader.load();
 
             Stage stage = new Stage();
