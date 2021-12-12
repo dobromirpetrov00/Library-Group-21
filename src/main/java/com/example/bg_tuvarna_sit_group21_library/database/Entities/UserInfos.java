@@ -24,6 +24,17 @@ public class UserInfos {
     @JoinColumn(name = "userid", nullable = false)
     private Users users;
 
+    public UserInfos(){
+
+    }
+
+    public UserInfos(String  name, String phone, String email, Users users) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.users=users;
+    }
+
     public Integer getId() {
         return id;
     }

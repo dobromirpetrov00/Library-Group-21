@@ -19,6 +19,9 @@ public class AdministratorController {
     public Button bookOptions;
 
     @FXML
+    public Button goBackButton;
+
+    @FXML
     public void onCreateOperatorButtonClick(ActionEvent actionEvent) throws IOException {
         Stage stage2 = (Stage) createOperator.getScene().getWindow();
         stage2.close();
@@ -45,6 +48,20 @@ public class AdministratorController {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Book Menu");
+        stage.show();
+    }
+
+    @FXML
+    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) goBackButton.getScene().getWindow();
+        stage2.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminLoginView));
+        Parent root = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Admin Login");
         stage.show();
     }
 }

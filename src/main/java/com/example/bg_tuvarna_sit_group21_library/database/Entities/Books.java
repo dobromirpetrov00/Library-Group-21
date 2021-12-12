@@ -36,6 +36,10 @@ public class Books implements Serializable {
     @OneToOne(mappedBy = "bookBookid")
     private Lendinfos lendinfos;
 
+    public Books(){
+
+    }
+
     public Integer getId() {
         return id;
     }

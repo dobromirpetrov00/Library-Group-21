@@ -24,6 +24,10 @@ public class Booksstored {
     @JoinColumn(name = "bookid", nullable = false)
     private Books books;
 
+    public Booksstored() {
+
+    }
+
     public Integer getId() {
         return id;
     }

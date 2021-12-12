@@ -13,7 +13,7 @@
             <Image url="@../../../images/adminView.jpg" />
          </image>
       </ImageView>
-      <Button id="record-sales" layoutX="564.0" layoutY="309.0" mnemonicParsing="false" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
-      <Button id="record-sales" layoutX="262.0" layoutY="241.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="136.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Add Book" />
+      <Button id="record-sales" fx:id="goBackButton" layoutX="564.0" layoutY="309.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <Button id="record-sales" fx:id="addBookButton" layoutX="262.0" layoutY="241.0" mnemonicParsing="false" onAction="#addBookButtonClick" prefHeight="68.0" prefWidth="136.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Add Book" />
    </children>
 </AnchorPane>

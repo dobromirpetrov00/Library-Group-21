@@ -1,6 +1,8 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -29,7 +31,7 @@ public class UserRepository {
             log.info("Get all users");
         } catch (Exception ex) {
             log.error("Get users error: " + ex.getMessage());
-            Connection.openSessionClose();
+            //Connection.openSessionClose();
         } finally {
             transaction.commit();
         }
@@ -37,15 +39,17 @@ public class UserRepository {
         return users;
     }
 
-    public void createUser(Users user){
+    public void createUser(Users user, UserInfos userInfos, Forms forms){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
         try{
+            session.save(forms);
             session.save(user);
+            session.save(userInfos);
             log.info("User created successfully");
         } catch (Exception ex) {
             log.error("Insert user error: " + ex.getMessage());
-            Connection.openSessionClose();
+            //Connection.openSessionClose();
         } finally {
             transaction.commit();
         }

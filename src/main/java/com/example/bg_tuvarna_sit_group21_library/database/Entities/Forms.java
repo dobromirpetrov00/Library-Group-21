@@ -17,6 +17,15 @@ public class Forms {
     @JoinColumn(name = "user_userid",referencedColumnName = "userid", nullable = false)
     private Users usersUserid;
 
+    public Forms() {
+
+    }
+
+    public Forms(Integer creationdate, Users usersUserid) {
+        this.creationdate = creationdate;
+        this.usersUserid = usersUserid;
+    }
+
     public Integer getId() {
         return id;
     }

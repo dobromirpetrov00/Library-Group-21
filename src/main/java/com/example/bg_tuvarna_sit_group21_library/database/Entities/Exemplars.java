@@ -18,6 +18,10 @@ public class Exemplars {
     @JoinColumn(name = "book_bookid", referencedColumnName = "bookid", nullable = false)
     private Books bookBookid;
 
+    public Exemplars() {
+
+    }
+
     public Integer getId() {
         return id;
     }

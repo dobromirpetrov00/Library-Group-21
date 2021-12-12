@@ -23,5 +23,6 @@
          </font>
       </Button>
       <Button id="record-sales" fx:id="bookOptions" layoutX="409.0" layoutY="152.0" mnemonicParsing="false" onAction="#onBookOptionsButtonClick" prefHeight="62.0" prefWidth="153.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Book Options" />
+      <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="273.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
    </children>
 </AnchorPane>

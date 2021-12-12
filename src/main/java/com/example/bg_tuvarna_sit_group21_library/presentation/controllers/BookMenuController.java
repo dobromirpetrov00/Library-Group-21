@@ -50,21 +50,6 @@ public class BookMenuController {
         stage.setResizable(false);
         stage.setTitle("Add Book");
         stage.show();
-
-//        String name = opName.getText();
-//        String pass = opPass.getText();
-//        int date = Integer.parseInt(opDate.getText());
-//        String rate = opRating.getText();
-//
-//        Statuses st = new Statuses();
-//        st.setId(1);
-//
-//        Usertypes ut = new Usertypes();
-//        ut.setId(2);
-//
-//        Users u = new Users(name, pass, date, rate, st, ut);
-//
-//        service.addBook(addbook);
     }
 
     @FXML

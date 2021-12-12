@@ -2,6 +2,8 @@ package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -16,11 +18,13 @@ public class BookRepository {
 
     private static final Logger log = Logger.getLogger(UserRepository.class);
 
-    public void addBook(Books book){
+    public void addBook(Books book, Booksstored booksstored, Exemplars exemplars){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
         try{
             session.save(book);
+            session.save(booksstored);
+            session.save(exemplars);
             log.info("Book added successfully");
         } catch (Exception ex) {
             log.error("Add book error: " + ex.getMessage());

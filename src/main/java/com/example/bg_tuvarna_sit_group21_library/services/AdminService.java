@@ -2,6 +2,8 @@ package com.example.bg_tuvarna_sit_group21_library.services;
 
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
@@ -60,8 +62,8 @@ public class AdminService {
         return login;
     }
 
-    public void createOperator(Users a){
-        repository.createUser(a);
+    public void createOperator(Users a, UserInfos v, Forms f){
+        repository.createUser(a, v, f);
     }
 
     public Integer returnLastId(){

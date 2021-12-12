@@ -43,6 +43,9 @@ public class AdminLoginController {
     public Label imageShow;
 
     @FXML
+    public Button goBackButton;
+
+    @FXML
     private Button adminLogin;
 
     @FXML
@@ -77,5 +80,20 @@ public class AdminLoginController {
             log.error("Wrong username or password");
             imageShow.setStyle("-fx-background-color: #851b1b");
         }
+    }
+
+    @FXML
+    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) adminLogin.getScene().getWindow();
+        stage2.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.View.HELLO_VIEW));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Login Menu");
+        stage.setResizable(false);
+        stage.show();
     }
 }
