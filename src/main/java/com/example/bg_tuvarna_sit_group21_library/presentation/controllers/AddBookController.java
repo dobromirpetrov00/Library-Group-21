@@ -85,6 +85,10 @@ public class AddBookController {
         String availableIf = bookAvailable.getText();
         String readingRoomIf = bookReadingRoom.getText();
 
+        Integer totalIf2 = Integer.parseInt(bookTotal.getText());
+        Integer availableIf2 = Integer.parseInt(bookAvailable.getText());
+        Integer readingRoomIf2 = Integer.parseInt(bookReadingRoom.getText());
+
         if(name.isBlank()){
             wrongLabel.setText("Enter book name");
         }
@@ -102,6 +106,15 @@ public class AddBookController {
         }
         else if(totalIf.isBlank()){
             wrongLabel.setText("Enter total books");
+        }
+        else if(totalIf2 != availableIf2 + readingRoomIf2){
+            wrongLabel.setText("Book pieces don't match");
+        }
+        else if(availableIf2 != totalIf2 - readingRoomIf2){
+            wrongLabel.setText("Book pieces don't match");
+        }
+        else if(readingRoomIf2 != totalIf2 - availableIf2){
+            wrongLabel.setText("Book pieces don't match");
         }
         else if(availableIf.isBlank()){
             wrongLabel.setText("Enter available books");
