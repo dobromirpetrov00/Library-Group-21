@@ -84,7 +84,7 @@ public class CreateOperatorController {
         else if(dateIf.isBlank() || dateIf.length()!=8) {
             wrongLabel.setText("Enter a valid date (ex: 01012020)");
         }
-        else if(rate.isBlank() || rate.length()<1 || rate.length()>10){ ///////////////rate length
+        else if(rate.isBlank() || Integer.parseInt(rate)<1 || Integer.parseInt(rate)>10){
             wrongLabel.setText("Enter rating from 1 to 10");
         }
         else if(twoNames.isBlank()){

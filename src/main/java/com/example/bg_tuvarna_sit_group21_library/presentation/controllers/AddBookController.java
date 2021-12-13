@@ -77,7 +77,6 @@ public class AddBookController {
         String name = bookName.getText();
         String author = bookAuthor.getText();
         String genre = bookGenre.getText();
-        //int year = Integer.parseInt(bookYear.getText());
         String yearIf = bookYear.getText();
         String isForArchive = bookIsForArchive.getText();
 
@@ -85,10 +84,6 @@ public class AddBookController {
         String totalIf = bookTotal.getText();
         String availableIf = bookAvailable.getText();
         String readingRoomIf = bookReadingRoom.getText();
-
-        //int total = Integer.parseInt(bookTotal.getText());
-        //int available = Integer.parseInt(bookAvailable.getText());
-        //int readingRoom = Integer.parseInt(bookReadingRoom.getText());
 
         if(name.isBlank()){
             wrongLabel.setText("Enter book name");
@@ -99,11 +94,11 @@ public class AddBookController {
         else if(genre.isBlank()){
             wrongLabel.setText("Enter genre");
         }
-        else if(yearIf.isBlank()){
-            wrongLabel.setText("Enter year");
+        else if(yearIf.isBlank() || yearIf.length()!=4 || Integer.parseInt(yearIf)>2021){
+            wrongLabel.setText("Enter valid year");
         }
         else if(isForArchive.isBlank()){
-            wrongLabel.setText("Enter for archive - YES or NO");
+            wrongLabel.setText("Enter for archive - YES/NO");
         }
         else if(totalIf.isBlank()){
             wrongLabel.setText("Enter total books");
