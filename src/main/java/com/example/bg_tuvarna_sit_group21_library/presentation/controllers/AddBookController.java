@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class AddBookController {
     private final BookService service = BookService.getInstance();
-    private static final Logger log = Logger.getLogger(AdminLoginController.class);
+    private static final Logger log = Logger.getLogger(AddBookController.class);
 
     @FXML
     public Button goBackButton;
@@ -80,23 +80,19 @@ public class AddBookController {
         int available = Integer.parseInt(bookAvailable.getText());
         int readingRoom = Integer.parseInt(bookReadingRoom.getText());
 
-        //info za exemplars
-
-
         //define Books
         Books book = new Books(name,author,genre,year,isForArchive);
 
         //define Booksstored
-        Booksstored booksstored = new Booksstored(total,available,readingRoom);
+        Booksstored booksstored = new Booksstored(total,available,readingRoom,book);
 
         Bookstates bs = new Bookstates();
-
+        bs.setId(1);
 
         //define Exemplars
-        Exemplars ex = new Exemplars(book,);
+        Exemplars ex = new Exemplars(book,bs);
 
-
-        //service.addBook(book,booksstored,);
+        service.addBook(book,booksstored,ex);
 
 //        String name = opName.getText();
 //        String pass = opPass.getText();

@@ -28,10 +28,11 @@ public class Booksstored {
 
     }
 
-    public Booksstored(Integer total, Integer available, Integer readingroom){
+    public Booksstored(Integer total, Integer available, Integer readingroom, Books books){
         this.total = total;
         this.available = available;
         this.readingroom = readingroom;
+        this.books = books;
     }
 
     public Integer getId() {

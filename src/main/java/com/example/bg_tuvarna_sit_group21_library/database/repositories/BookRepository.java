@@ -15,7 +15,7 @@ public class BookRepository {
         public static final BookRepository INSTANCE = new BookRepository();
     }
 
-    private static final Logger log = Logger.getLogger(UserRepository.class);
+    private static final Logger log = Logger.getLogger(BookRepository.class);
 
     public void addBook(Books book, Booksstored booksstored, Exemplars exemplars){
         Session session = Connection.openSession();
