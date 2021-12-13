@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AddBookController">
    <children>
       <ImageView fitHeight="365.0" fitWidth="659.0">
@@ -66,5 +65,10 @@
       <TextField fx:id="bookTotal" layoutX="490.0" layoutY="90.0" />
       <TextField fx:id="bookAvailable" layoutX="490.0" layoutY="145.0" />
       <TextField fx:id="bookReadingRoom" layoutX="490.0" layoutY="200.0" />
+      <Label fx:id="wrongLabel" layoutX="33.0" layoutY="275.0" prefHeight="68.0" prefWidth="199.0" textFill="RED" wrapText="true">
+         <font>
+            <Font name="Algerian" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

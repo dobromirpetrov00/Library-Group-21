@@ -75,6 +75,7 @@ public class AdminLoginController {
             stage.setResizable(false);
             stage.setTitle("Administrator - " + usernameField.getText());
             stage.show();
+            log.info("Admin " + usernameField.getText() + " logged successfully");
         } else {
             labelWrongInfo.setText("Invalid username or password");
             log.error("Wrong username or password");

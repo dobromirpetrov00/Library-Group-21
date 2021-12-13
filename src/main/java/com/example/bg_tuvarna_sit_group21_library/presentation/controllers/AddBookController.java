@@ -10,7 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
@@ -51,6 +53,9 @@ public class AddBookController {
     public TextField bookReadingRoom;
 
     @FXML
+    public Label wrongLabel;
+
+    @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
         Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
@@ -72,47 +77,67 @@ public class AddBookController {
         String name = bookName.getText();
         String author = bookAuthor.getText();
         String genre = bookGenre.getText();
-        int year = Integer.parseInt(bookYear.getText());
+        //int year = Integer.parseInt(bookYear.getText());
+        String yearIf = bookYear.getText();
         String isForArchive = bookIsForArchive.getText();
 
         //info za booksstored
-        int total = Integer.parseInt(bookTotal.getText());
-        int available = Integer.parseInt(bookAvailable.getText());
-        int readingRoom = Integer.parseInt(bookReadingRoom.getText());
+        String totalIf = bookTotal.getText();
+        String availableIf = bookAvailable.getText();
+        String readingRoomIf = bookReadingRoom.getText();
 
-        //define Books
-        Books book = new Books(name,author,genre,year,isForArchive);
+        //int total = Integer.parseInt(bookTotal.getText());
+        //int available = Integer.parseInt(bookAvailable.getText());
+        //int readingRoom = Integer.parseInt(bookReadingRoom.getText());
 
-        //define Booksstored
-        Booksstored booksstored = new Booksstored(total,available,readingRoom,book);
+        if(name.isBlank()){
+            wrongLabel.setText("Enter book name");
+        }
+        else if(author.isBlank()){
+            wrongLabel.setText("Enter author name");
+        }
+        else if(genre.isBlank()){
+            wrongLabel.setText("Enter genre");
+        }
+        else if(yearIf.isBlank()){
+            wrongLabel.setText("Enter year");
+        }
+        else if(isForArchive.isBlank()){
+            wrongLabel.setText("Enter for archive - YES or NO");
+        }
+        else if(totalIf.isBlank()){
+            wrongLabel.setText("Enter total books");
+        }
+        else if(availableIf.isBlank()){
+            wrongLabel.setText("Enter available books");
+        }
+        else if(readingRoomIf.isBlank()){
+            wrongLabel.setText("Enter books for reading room");
+        }
+        else {
+            int total = Integer.parseInt(bookTotal.getText());
+            int available = Integer.parseInt(bookAvailable.getText());
+            int readingRoom = Integer.parseInt(bookReadingRoom.getText());
+            int year = Integer.parseInt(bookYear.getText());
 
-        Bookstates bs = new Bookstates();
-        bs.setId(1);
+            wrongLabel.setText("Book added successfully");
+            wrongLabel.setTextFill(Color.GREEN);
 
-        //define Exemplars
-        Exemplars ex = new Exemplars(book,bs);
+            //define Books
+            Books book = new Books(name, author, genre, year, isForArchive);
 
-        service.addBook(book,booksstored,ex);
+            //define Booksstored
+            Booksstored booksstored = new Booksstored(total, available, readingRoom, book);
 
-//        String name = opName.getText();
-//        String pass = opPass.getText();
-//        int date = Integer.parseInt(opDate.getText());
-//        String rate = opRating.getText();
-//        String twoNames = opTwoNames.getText();
-//        String phone = opPhone.getText();
-//        String email = opEmail.getText();
-//
-//        Statuses st = new Statuses();
-//        st.setId(1);
-//
-//        Usertypes ut = new Usertypes();
-//        ut.setId(2);
-//
-//        Users u = new Users(name, pass, date, rate, st, ut);
-//        UserInfos v = new UserInfos(twoNames, phone, email, u);
-//
-//        Forms f = new Forms(date, u);
-//
-//        service.createOperator(u, v, f);
+            //set id Bookstates
+            Bookstates bs = new Bookstates();
+            bs.setId(1);
+
+            //define Exemplars
+            Exemplars ex = new Exemplars(book, bs);
+
+            service.addBook(book, booksstored, ex);
+            log.info("Book added successfully");
+        }
     }
 }

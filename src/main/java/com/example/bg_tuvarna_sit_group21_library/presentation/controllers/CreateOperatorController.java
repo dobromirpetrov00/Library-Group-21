@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
@@ -83,7 +84,7 @@ public class CreateOperatorController {
         else if(dateIf.isBlank() || dateIf.length()!=8) {
             wrongLabel.setText("Enter a valid date (ex: 01012020)");
         }
-        else if(rate.isBlank() || rate.length()<1 || rate.length()>10){
+        else if(rate.isBlank() || rate.length()<1 || rate.length()>10){ ///////////////rate length
             wrongLabel.setText("Enter rating from 1 to 10");
         }
         else if(twoNames.isBlank()){
@@ -98,11 +99,15 @@ public class CreateOperatorController {
         else {
             int date = Integer.parseInt(opDate.getText());
 
+            wrongLabel.setText("Operator added successfully");
+            wrongLabel.setTextFill(Color.GREEN);
+
             Users u = new Users(name, pass, date, rate, st, ut);
             UserInfos v = new UserInfos(twoNames, phone, email, u);
             Forms f = new Forms(date, u);
 
             service.createOperator(u, v, f);
+            log.info("Operator added successfully");
         }
     }
 

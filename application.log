@@ -400,3 +400,4 @@ line 1:8: unexpected token: *
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.BookRepository  - Add book error: attempted to assign id from null one-to-one property [com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored.books]
 [JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - Connection leak detected: there are 1 unclosed connections upon shutting down pool jdbc:mysql://localhost:3306/library
 [JavaFX Application Thread] ERROR org.hibernate.orm.connections.pooling  - Connection leak detected: there are 1 unclosed connections!
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
