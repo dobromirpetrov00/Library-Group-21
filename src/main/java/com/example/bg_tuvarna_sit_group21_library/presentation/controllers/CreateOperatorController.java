@@ -55,61 +55,142 @@ public class CreateOperatorController {
 
     @FXML
     public void createOperatorButtonPressed(ActionEvent actionEvent) {
-        String name = opName.getText();
-        String pass = opPass.getText();
-        String dateIf = opDate.getText();
-        String rate = opRating.getText();
-        String twoNames = opTwoNames.getText();
-        String phone = opPhone.getText();
-        String email = opEmail.getText();
-
-        Statuses st = new Statuses();
-        st.setId(1);
-
-        Usertypes ut = new Usertypes();
-        ut.setId(2);
-
-        if(name.isBlank()){
+        if (opName.getText().isBlank()) {
             wrongLabel.setText("Enter a username");
         }
-        else if(name.length()>30){
-            wrongLabel.setText("Username must be less than 30 letters");
-        }
-        else if(pass.isBlank()){
+        else if (opPass.getText().isBlank()) {
             wrongLabel.setText("Enter a password");
         }
-        else if(pass.length()>30){
-            wrongLabel.setText("Password must be less than 30 letters");
-        }
-        else if(dateIf.isBlank() || dateIf.length()!=8) {
+        else if (opDate.getText().isBlank()) {
             wrongLabel.setText("Enter a valid date (ex: 01012020)");
         }
-        else if(rate.isBlank() || Integer.parseInt(rate)<1 || Integer.parseInt(rate)>10){
+        else if (opRating.getText().isBlank()) {
             wrongLabel.setText("Enter rating from 1 to 10");
         }
-        else if(twoNames.isBlank()){
+        else if (opTwoNames.getText().isBlank()) {
             wrongLabel.setText("Enter two names");
         }
-        else if(phone.isBlank() || phone.length()!=10){
+        else if (opPhone.getText().isBlank()) {
             wrongLabel.setText("Enter phone number - 10 numbers");
         }
-        else if(email.isBlank()){
+        else if (opEmail.getText().isBlank()) {
             wrongLabel.setText("Enter an email");
         }
         else {
-            int date = Integer.parseInt(opDate.getText());
+            String name = opName.getText();
+            String pass = opPass.getText();
+            String dateIf = opDate.getText();
+            String rate = opRating.getText();
+            String twoNames = opTwoNames.getText();
+            String phone = opPhone.getText();
+            String email = opEmail.getText();
 
-            wrongLabel.setText("Operator added successfully");
-            wrongLabel.setTextFill(Color.GREEN);
+            Statuses st = new Statuses();
+            st.setId(1);
 
-            Users u = new Users(name, pass, date, rate, st, ut);
-            UserInfos v = new UserInfos(twoNames, phone, email, u);
-            Forms f = new Forms(date, u);
+            Usertypes ut = new Usertypes();
+            ut.setId(2);
 
-            service.createOperator(u, v, f);
-            log.info("Operator added successfully");
+            if (name.isBlank()) {
+                wrongLabel.setText("Enter a username");
+            }
+            else if (name.length() > 30) {
+                wrongLabel.setText("Username must be less than 30 letters");
+            }
+            else if (pass.isBlank()) {
+                wrongLabel.setText("Enter a password");
+            }
+            else if (pass.length() > 30) {
+                wrongLabel.setText("Password must be less than 30 letters");
+            }
+            else if (dateIf.isBlank() || dateIf.length() != 8) {
+                wrongLabel.setText("Enter a valid date (ex: 01012020)");
+            }
+            else if (rate.isBlank() || Integer.parseInt(rate) < 1 || Integer.parseInt(rate) > 10) {
+                wrongLabel.setText("Enter rating from 1 to 10");
+            }
+            else if (twoNames.isBlank()) {
+                wrongLabel.setText("Enter two names");
+            }
+            else if (phone.isBlank() || phone.length() != 10) {
+                wrongLabel.setText("Enter phone number - 10 numbers");
+            }
+            else if (email.isBlank()) {
+                wrongLabel.setText("Enter an email");
+            }
+            else {
+                int date = Integer.parseInt(opDate.getText());
+
+                wrongLabel.setText("Operator added successfully");
+                wrongLabel.setTextFill(Color.GREEN);
+
+                Users u = new Users(name, pass, date, rate, st, ut);
+                UserInfos v = new UserInfos(twoNames, phone, email, u);
+                Forms f = new Forms(date, u);
+
+                service.createOperator(u, v, f);
+                log.info("Operator added successfully");
+            }
         }
     }
+
+//    @FXML
+//    public void createOperatorButtonPressed(ActionEvent actionEvent) {
+//        String name = opName.getText();
+//        String pass = opPass.getText();
+//        String dateIf = opDate.getText();
+//        String rate = opRating.getText();
+//        String twoNames = opTwoNames.getText();
+//        String phone = opPhone.getText();
+//        String email = opEmail.getText();
+//
+//        Statuses st = new Statuses();
+//        st.setId(1);
+//
+//        Usertypes ut = new Usertypes();
+//        ut.setId(2);
+//
+//        if(name.isBlank()){
+//            wrongLabel.setText("Enter a username");
+//        }
+//        else if(name.length()>30){
+//            wrongLabel.setText("Username must be less than 30 letters");
+//        }
+//        else if(pass.isBlank()){
+//            wrongLabel.setText("Enter a password");
+//        }
+//        else if(pass.length()>30){
+//            wrongLabel.setText("Password must be less than 30 letters");
+//        }
+//        else if(dateIf.isBlank() || dateIf.length()!=8) {
+//            wrongLabel.setText("Enter a valid date (ex: 01012020)");
+//        }
+//        else if(rate.isBlank() || Integer.parseInt(rate)<1 || Integer.parseInt(rate)>10){
+//            wrongLabel.setText("Enter rating from 1 to 10");
+//        }
+//        else if(twoNames.isBlank()){
+//            wrongLabel.setText("Enter two names");
+//        }
+//        else if(phone.isBlank() || phone.length()!=10){
+//            wrongLabel.setText("Enter phone number - 10 numbers");
+//        }
+//        else if(email.isBlank()){
+//            wrongLabel.setText("Enter an email");
+//        }
+//        else {
+//            int date = Integer.parseInt(opDate.getText());
+//
+//            wrongLabel.setText("Operator added successfully");
+//            wrongLabel.setTextFill(Color.GREEN);
+//
+//            Users u = new Users(name, pass, date, rate, st, ut);
+//            UserInfos v = new UserInfos(twoNames, phone, email, u);
+//            Forms f = new Forms(date, u);
+//
+//            service.createOperator(u, v, f);
+//            log.info("Operator added successfully");
+//        }
+//    }
 
     @FXML
     public void onGoBackButtonClick(ActionEvent actionEvent) throws IOException {
