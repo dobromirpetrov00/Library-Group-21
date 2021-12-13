@@ -27,7 +27,7 @@ public class BookRepository {
             log.info("Book added successfully");
         } catch (Exception ex) {
             log.error("Add book error: " + ex.getMessage());
-            Connection.openSessionClose();
+            //Connection.openSessionClose();
         } finally {
             transaction.commit();
         }
