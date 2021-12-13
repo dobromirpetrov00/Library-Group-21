@@ -56,7 +56,6 @@ public class CreateOperatorController {
     public void createOperatorButtonPressed(ActionEvent actionEvent) {
         String name = opName.getText();
         String pass = opPass.getText();
-        //int date = Integer.parseInt(opDate.getText());
         String dateIf = opDate.getText();
         String rate = opRating.getText();
         String twoNames = opTwoNames.getText();
@@ -72,8 +71,14 @@ public class CreateOperatorController {
         if(name.isBlank()){
             wrongLabel.setText("Enter a username");
         }
+        else if(name.length()>30){
+            wrongLabel.setText("Username must be less than 30 letters");
+        }
         else if(pass.isBlank()){
             wrongLabel.setText("Enter a password");
+        }
+        else if(pass.length()>30){
+            wrongLabel.setText("Password must be less than 30 letters");
         }
         else if(dateIf.isBlank() || dateIf.length()!=8) {
             wrongLabel.setText("Enter a valid date (ex: 01012020)");

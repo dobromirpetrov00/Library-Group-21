@@ -28,6 +28,12 @@ public class Booksstored {
 
     }
 
+    public Booksstored(Integer total, Integer available, Integer readingroom){
+        this.total = total;
+        this.available = available;
+        this.readingroom = readingroom;
+    }
+
     public Integer getId() {
         return id;
     }

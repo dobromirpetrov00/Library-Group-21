@@ -1,9 +1,6 @@
 package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Statuses;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Usertypes;
 import com.example.bg_tuvarna_sit_group21_library.services.BookService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,9 +20,6 @@ public class BookMenuController {
 
     @FXML
     public Button addBookButton;
-
-    @FXML
-    public Button giveBookButton;
 
     @FXML
     public Button archiveBookButton;
@@ -49,21 +43,6 @@ public class BookMenuController {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Add Book");
-        stage.show();
-    }
-
-    @FXML
-    public void onGiveBookButtonClick(ActionEvent actionEvent) throws IOException {
-        Stage stage2 = (Stage) giveBookButton.getScene().getWindow();
-        stage2.close();
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.giveBookView));
-        Parent root = (Parent) fxmlLoader.load();
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.setTitle("Give Book");
         stage.show();
     }
 

@@ -40,6 +40,14 @@ public class Books implements Serializable {
 
     }
 
+    public Books(String bookname, String author, String genre, Integer year, String isarchived){
+        this.bookname = bookname;
+        this.author = author;
+        this.genre = genre;
+        this.year = year;
+        this.isarchived = isarchived;
+    }
+
     public Integer getId() {
         return id;
     }

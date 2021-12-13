@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
@@ -24,6 +25,30 @@ public class AddBookController {
 
     @FXML
     public Button addBookButton;
+
+    @FXML
+    public TextField bookName;
+
+    @FXML
+    public TextField bookAuthor;
+
+    @FXML
+    public TextField bookGenre;
+
+    @FXML
+    public TextField bookYear;
+
+    @FXML
+    public TextField bookIsForArchive;
+
+    @FXML
+    public TextField bookTotal;
+
+    @FXML
+    public TextField bookAvailable;
+
+    @FXML
+    public TextField bookReadingRoom;
 
     @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
@@ -44,15 +69,34 @@ public class AddBookController {
     public void addBookButtonClick(ActionEvent actionEvent) {
 
         //info za books
-
+        String name = bookName.getText();
+        String author = bookAuthor.getText();
+        String genre = bookGenre.getText();
+        int year = Integer.parseInt(bookYear.getText());
+        String isForArchive = bookIsForArchive.getText();
 
         //info za booksstored
-
+        int total = Integer.parseInt(bookTotal.getText());
+        int available = Integer.parseInt(bookAvailable.getText());
+        int readingRoom = Integer.parseInt(bookReadingRoom.getText());
 
         //info za exemplars
 
 
-        //service.addBook();
+        //define Books
+        Books book = new Books(name,author,genre,year,isForArchive);
+
+        //define Booksstored
+        Booksstored booksstored = new Booksstored(total,available,readingRoom);
+
+        Bookstates bs = new Bookstates();
+
+
+        //define Exemplars
+        Exemplars ex = new Exemplars(book,);
+
+
+        //service.addBook(book,booksstored,);
 
 //        String name = opName.getText();
 //        String pass = opPass.getText();

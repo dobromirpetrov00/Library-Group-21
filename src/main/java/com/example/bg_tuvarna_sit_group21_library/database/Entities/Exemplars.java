@@ -22,6 +22,11 @@ public class Exemplars {
 
     }
 
+    public Exemplars(Books booksBookid, Bookstates stateStateid){
+        this.bookBookid=booksBookid;
+        this.stateStateid=stateStateid;
+    }
+
     public Integer getId() {
         return id;
     }

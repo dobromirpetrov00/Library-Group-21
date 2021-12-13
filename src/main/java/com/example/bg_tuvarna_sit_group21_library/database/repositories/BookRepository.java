@@ -4,7 +4,6 @@ import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
