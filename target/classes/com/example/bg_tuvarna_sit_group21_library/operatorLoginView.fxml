@@ -27,7 +27,7 @@
             <Font name="Algerian" size="18.0" />
          </font>
       </Label>
-            <Button id="record-sales" fx:id="operatorLogin" layoutX="281.0" layoutY="162.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="42.0" prefWidth="98.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Login" />
+            <Button id="record-sales" fx:id="operatorLogin" layoutX="212.0" layoutY="162.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="42.0" prefWidth="98.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Login" />
       <PasswordField fx:id="opPassword" layoutX="383.0" layoutY="113.0" />
       <Label fx:id="imageShow" layoutX="129.0" layoutY="251.0" prefHeight="77.0" prefWidth="403.0" textFill="WHITE" />
       <Label fx:id="labelWrongInfo" layoutX="169.0" layoutY="278.0" prefHeight="24.0" prefWidth="323.0" textAlignment="CENTER" textFill="RED">
@@ -35,5 +35,6 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
+      <Button id="record-sales" fx:id="goBackButton" layoutX="350.0" layoutY="162.0" mnemonicParsing="false" onAction="#goBackButtonClick" prefHeight="42.0" prefWidth="98.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
          </children>
       </AnchorPane>

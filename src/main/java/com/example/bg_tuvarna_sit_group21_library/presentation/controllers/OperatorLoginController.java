@@ -35,6 +35,9 @@ public class OperatorLoginController {
     @FXML
     public Label labelWrongInfo;
 
+    @FXML
+    public Button goBackButton;
+
     private final OperatorService service = OperatorService.getInstance();
     private static final Logger log = Logger.getLogger(OperatorLoginController.class);
 
@@ -61,5 +64,19 @@ public class OperatorLoginController {
             log.error("Wrong username or password");
             imageShow.setStyle("-fx-background-color: #851b1b");
         }
+    }
+
+    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) goBackButton.getScene().getWindow();
+        stage2.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.View.HELLO_VIEW));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Login Menu");
+        stage.setResizable(false);
+        stage.show();
     }
 }

@@ -85,7 +85,7 @@ public class AdminLoginController {
 
     @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
-        Stage stage2 = (Stage) adminLogin.getScene().getWindow();
+        Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.View.HELLO_VIEW));
