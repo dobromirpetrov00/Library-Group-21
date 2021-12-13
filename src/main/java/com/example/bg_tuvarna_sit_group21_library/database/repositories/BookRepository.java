@@ -32,4 +32,38 @@ public class BookRepository {
             transaction.commit();
         }
     }
+
+//    public void deleteBook(Books books, Exemplars exemplars){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//        try{
+//            session.delete(exemplars.getId());
+//            session.delete(books.getId());
+//            log.info("Book deleted successfully");
+//        } catch (Exception ex) {
+//            log.error("Delete book error: " + ex.getMessage());
+//            //Connection.openSessionClose();
+//        } finally {
+//            transaction.commit();
+//        }
+//    }
+
+    ////////////////////////////////////
+    // stoinostite sa NULL v obektite //
+    ////////////////////////////////////
+    public void deleteBook(Books book, Booksstored booksstored, Exemplars exemplars){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.delete(exemplars);
+            session.delete(booksstored);
+            session.delete(book);
+            log.info("Book deleted successfully");
+        } catch (Exception ex) {
+            log.error("Delete book error: " + ex.getMessage());
+            //Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
 }

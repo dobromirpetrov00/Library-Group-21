@@ -43,8 +43,9 @@ public class UserRepository {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
         try{
-            session.save(forms);
             session.save(user);
+            session.save(forms);
+            //session.save(user);
             session.save(userInfos);
             log.info("User created successfully");
         } catch (Exception ex) {

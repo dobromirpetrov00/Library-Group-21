@@ -19,4 +19,12 @@ public class BookService {
     public void addBook(Books b, Booksstored bs, Exemplars ex){
         repository.addBook(b, bs, ex);
     }
+
+//    public void deleteBook(Books books, Exemplars exemplars){
+//        repository.deleteBook(books,exemplars);
+//    }
+
+    public void deleteBook(Books books, Booksstored booksstored, Exemplars exemplars){
+        repository.deleteBook(books,booksstored,exemplars);
+    }
 }
