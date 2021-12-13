@@ -73,79 +73,194 @@ public class AddBookController {
     @FXML
     public void addBookButtonClick(ActionEvent actionEvent) {
 
-        //info za books
-        String name = bookName.getText();
-        String author = bookAuthor.getText();
-        String genre = bookGenre.getText();
-        String yearIf = bookYear.getText();
-        String isForArchive = bookIsForArchive.getText();
-
-        //info za booksstored
-        String totalIf = bookTotal.getText();
-        String availableIf = bookAvailable.getText();
-        String readingRoomIf = bookReadingRoom.getText();
-
-        Integer totalIf2 = Integer.parseInt(bookTotal.getText());
-        Integer availableIf2 = Integer.parseInt(bookAvailable.getText());
-        Integer readingRoomIf2 = Integer.parseInt(bookReadingRoom.getText());
-
-        if(name.isBlank()){
+        if(bookName.getText().isBlank()){
             wrongLabel.setText("Enter book name");
         }
-        else if(author.isBlank()){
+        else if(bookAuthor.getText().isBlank()){
             wrongLabel.setText("Enter author name");
         }
-        else if(genre.isBlank()){
+        else if(bookGenre.getText().isBlank()){
             wrongLabel.setText("Enter genre");
         }
-        else if(yearIf.isBlank() || yearIf.length()!=4 || Integer.parseInt(yearIf)>2021){
+        else if(bookYear.getText().isBlank()){
             wrongLabel.setText("Enter valid year");
         }
-        else if(isForArchive.isBlank()){
-            wrongLabel.setText("Enter for archive - YES/NO");
+        else if(bookIsForArchive.getText().isBlank()){
+            wrongLabel.setText("Enter for archive - yes/no");
         }
-        else if(totalIf.isBlank()){
+        else if(bookTotal.getText().isBlank()){
             wrongLabel.setText("Enter total books");
         }
-        else if(totalIf2 != availableIf2 + readingRoomIf2){
-            wrongLabel.setText("Book pieces don't match");
-        }
-        else if(availableIf2 != totalIf2 - readingRoomIf2){
-            wrongLabel.setText("Book pieces don't match");
-        }
-        else if(readingRoomIf2 != totalIf2 - availableIf2){
-            wrongLabel.setText("Book pieces don't match");
-        }
-        else if(availableIf.isBlank()){
+        else if(bookAvailable.getText().isBlank()){
             wrongLabel.setText("Enter available books");
         }
-        else if(readingRoomIf.isBlank()){
+        else if(bookReadingRoom.getText().isBlank()){
             wrongLabel.setText("Enter books for reading room");
         }
         else {
-            int total = Integer.parseInt(bookTotal.getText());
-            int available = Integer.parseInt(bookAvailable.getText());
-            int readingRoom = Integer.parseInt(bookReadingRoom.getText());
-            int year = Integer.parseInt(bookYear.getText());
+            //info za books
+            String name = bookName.getText();
+            String author = bookAuthor.getText();
+            String genre = bookGenre.getText();
+            String yearIf = bookYear.getText();
+            String isForArchive = bookIsForArchive.getText();
 
-            wrongLabel.setText("Book added successfully");
-            wrongLabel.setTextFill(Color.GREEN);
+            //info za booksstored
+            String totalIf = bookTotal.getText();
+            String availableIf = bookAvailable.getText();
+            String readingRoomIf = bookReadingRoom.getText();
 
-            //define Books
-            Books book = new Books(name, author, genre, year, isForArchive);
+            Integer totalIf2 = Integer.parseInt(bookTotal.getText());
+            Integer availableIf2 = Integer.parseInt(bookAvailable.getText());
+            Integer readingRoomIf2 = Integer.parseInt(bookReadingRoom.getText());
 
-            //define Booksstored
-            Booksstored booksstored = new Booksstored(total, available, readingRoom, book);
+            String yes = "yes";
+            String no = "no";
 
-            //set id Bookstates
-            Bookstates bs = new Bookstates();
-            bs.setId(1);
+            if(name.isBlank()){
+                wrongLabel.setText("Enter book name");
+            }
+            else if(author.isBlank()){
+                wrongLabel.setText("Enter author name");
+            }
+            else if(genre.isBlank()){
+                wrongLabel.setText("Enter genre");
+            }
+            else if(yearIf.isBlank() || Integer.parseInt(yearIf)>2021 || Integer.parseInt(yearIf)<1){
+                wrongLabel.setText("Enter valid year");
+            }
+            else if(isForArchive.isBlank() || (!isForArchive.equals(yes) && !isForArchive.equals(no))){
+                wrongLabel.setText("Enter for archive - yes/no");
+            }
+            else if(totalIf.isBlank()){
+                wrongLabel.setText("Enter total books");
+            }
+            else if(totalIf2 != availableIf2 + readingRoomIf2){
+                wrongLabel.setText("Book pieces don't match");
+            }
+            else if(availableIf2 != totalIf2 - readingRoomIf2){
+                wrongLabel.setText("Book pieces don't match");
+            }
+            else if(readingRoomIf2 != totalIf2 - availableIf2){
+                wrongLabel.setText("Book pieces don't match");
+            }
+            else if(availableIf.isBlank()){
+                wrongLabel.setText("Enter available books");
+            }
+            else if(readingRoomIf.isBlank()){
+                wrongLabel.setText("Enter books for reading room");
+            }
+            else {
 
-            //define Exemplars
-            Exemplars ex = new Exemplars(book, bs);
+                int total = Integer.parseInt(bookTotal.getText());
+                int available = Integer.parseInt(bookAvailable.getText());
+                int readingRoom = Integer.parseInt(bookReadingRoom.getText());
+                int year = Integer.parseInt(bookYear.getText());
 
-            service.addBook(book, booksstored, ex);
-            log.info("Book added successfully");
+                wrongLabel.setText("Book added successfully");
+                wrongLabel.setTextFill(Color.GREEN);
+
+                //define Books
+                Books book = new Books(name, author, genre, year, isForArchive);
+
+                //define Booksstored
+                Booksstored booksstored = new Booksstored(total, available, readingRoom, book);
+
+                //set id Bookstates
+                Bookstates bs = new Bookstates();
+                bs.setId(1);
+
+                //define Exemplars
+                Exemplars ex = new Exemplars(book, bs);
+
+                service.addBook(book, booksstored, ex);
+                log.info("Book added successfully");
+            }
         }
     }
+
+//    @FXML
+//    public void addBookButtonClick(ActionEvent actionEvent) {
+//
+//        //info za books
+//        String name = bookName.getText();
+//        String author = bookAuthor.getText();
+//        String genre = bookGenre.getText();
+//        String yearIf = bookYear.getText();
+//        String isForArchive = bookIsForArchive.getText();
+//
+//        //info za booksstored
+//        String totalIf = bookTotal.getText();
+//        String availableIf = bookAvailable.getText();
+//        String readingRoomIf = bookReadingRoom.getText();
+//
+//        Integer totalIf2 = Integer.parseInt(bookTotal.getText());
+//        Integer availableIf2 = Integer.parseInt(bookAvailable.getText());
+//        Integer readingRoomIf2 = Integer.parseInt(bookReadingRoom.getText());
+//
+//        String yes = "yes";
+//        String no = "no";
+//
+//        if(bookName.getText().isBlank())
+//            wrongLabel.setText("Enter book name");
+//
+//        if(name.isBlank()){
+//            wrongLabel.setText("Enter book name");
+//        }
+//        else if(author.isBlank()){
+//            wrongLabel.setText("Enter author name");
+//        }
+//        else if(genre.isBlank()){
+//            wrongLabel.setText("Enter genre");
+//        }
+//        else if(yearIf.isBlank() || Integer.parseInt(yearIf)>2021 || Integer.parseInt(yearIf)<1){
+//            wrongLabel.setText("Enter valid year");
+//        }
+//        else if(isForArchive.isBlank() || (!isForArchive.equals(yes) && !isForArchive.equals(no))){
+//            wrongLabel.setText("Enter for archive - yes/no");
+//        }
+//        else if(totalIf.isBlank()){
+//            wrongLabel.setText("Enter total books");
+//        }
+//        else if(totalIf2 != availableIf2 + readingRoomIf2){
+//            wrongLabel.setText("Book pieces don't match");
+//        }
+//        else if(availableIf2 != totalIf2 - readingRoomIf2){
+//            wrongLabel.setText("Book pieces don't match");
+//        }
+//        else if(readingRoomIf2 != totalIf2 - availableIf2){
+//            wrongLabel.setText("Book pieces don't match");
+//        }
+//        else if(availableIf.isBlank()){
+//            wrongLabel.setText("Enter available books");
+//        }
+//        else if(readingRoomIf.isBlank()){
+//            wrongLabel.setText("Enter books for reading room");
+//        }
+//        else {
+//            int total = Integer.parseInt(bookTotal.getText());
+//            int available = Integer.parseInt(bookAvailable.getText());
+//            int readingRoom = Integer.parseInt(bookReadingRoom.getText());
+//            int year = Integer.parseInt(bookYear.getText());
+//
+//            wrongLabel.setText("Book added successfully");
+//            wrongLabel.setTextFill(Color.GREEN);
+//
+//            //define Books
+//            Books book = new Books(name, author, genre, year, isForArchive);
+//
+//            //define Booksstored
+//            Booksstored booksstored = new Booksstored(total, available, readingRoom, book);
+//
+//            //set id Bookstates
+//            Bookstates bs = new Bookstates();
+//            bs.setId(1);
+//
+//            //define Exemplars
+//            Exemplars ex = new Exemplars(book, bs);
+//
+//            service.addBook(book, booksstored, ex);
+//            log.info("Book added successfully");
+//        }
+//    }
 }
