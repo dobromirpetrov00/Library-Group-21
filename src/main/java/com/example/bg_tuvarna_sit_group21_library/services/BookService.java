@@ -27,4 +27,8 @@ public class BookService {
     public boolean ifExist(Books book){
         return repository.ifExists(book);
     }
+
+    public void archivedBook(Books book, Exemplars exemplar, Booksstored booksstored){
+        repository.archiveBook(book, exemplar, booksstored);
+    }
 }

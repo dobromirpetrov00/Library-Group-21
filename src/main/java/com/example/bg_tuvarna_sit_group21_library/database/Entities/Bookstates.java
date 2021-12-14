@@ -17,6 +17,10 @@ public class Bookstates {
     @Column(name = "state", nullable = false, length = 30)
     private String state;
 
+    public Bookstates() {
+
+    }
+
     public Integer getId() {
         return id;
     }
