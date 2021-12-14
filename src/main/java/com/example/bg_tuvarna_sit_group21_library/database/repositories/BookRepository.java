@@ -48,6 +48,18 @@ public class BookRepository {
         return (query.uniqueResult() != null);
     }
 
+    public boolean ifArchived(Books book){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String archived = "select 1 from Books where id=:id and isarchived=:isarchived";
+        Query query = session.getSession().createQuery(archived);
+        query.setParameter("id",book.getId());
+        query.setParameter("isarchived","no");
+
+        return (query.uniqueResult() != null);
+    }
+
     public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored) {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();

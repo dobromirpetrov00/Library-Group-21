@@ -53,7 +53,7 @@ public class ScrapBookController {
     @FXML
     public void scrapBookButtonClick(ActionEvent actionEvent) {
         if(invalidIdLabel.getText().isBlank() || invalidIdLabel.getText().isEmpty()){
-            invalidIdLabel.setText("invalid id");
+            invalidIdLabel.setText("blank id");
             invalidIdLabel.setTextFill(Color.RED);
             invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
@@ -64,7 +64,7 @@ public class ScrapBookController {
             book.setId(bookIdGet);
 
             if(!service.ifExist(book)) {
-                invalidIdLabel.setText("invalid id");
+                invalidIdLabel.setText("id doesn't exist");
                 invalidIdLabel.setTextFill(Color.RED);
                 invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
