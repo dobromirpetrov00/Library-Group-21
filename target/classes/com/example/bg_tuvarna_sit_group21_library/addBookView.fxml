@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       <Button id="record-sales" fx:id="goBackButton" layoutX="564.0" layoutY="309.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
-      <Button id="record-sales" fx:id="addBookButton" layoutX="262.0" layoutY="275.0" mnemonicParsing="false" onAction="#addBookButtonClick" prefHeight="68.0" prefWidth="136.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Add Book" />
+      <Button id="record-sales" fx:id="addBookButton" layoutX="274.0" layoutY="275.0" mnemonicParsing="false" onAction="#addBookButtonClick" prefHeight="68.0" prefWidth="136.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Add Book" />
       <Label layoutX="41.0" layoutY="35.0" text="Name" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
@@ -65,9 +65,9 @@
       <TextField fx:id="bookTotal" layoutX="490.0" layoutY="90.0" />
       <TextField fx:id="bookAvailable" layoutX="490.0" layoutY="145.0" />
       <TextField fx:id="bookReadingRoom" layoutX="490.0" layoutY="200.0" />
-      <Label fx:id="wrongLabel" layoutX="33.0" layoutY="275.0" prefHeight="68.0" prefWidth="199.0" textFill="RED" wrapText="true">
+      <Label fx:id="wrongLabel" layoutX="203.0" layoutY="240.0" prefHeight="25.0" prefWidth="278.0" textAlignment="CENTER" textFill="RED" wrapText="true">
          <font>
-            <Font name="Algerian" size="15.0" />
+            <Font name="Algerian" size="20.0" />
          </font>
       </Label>
    </children>

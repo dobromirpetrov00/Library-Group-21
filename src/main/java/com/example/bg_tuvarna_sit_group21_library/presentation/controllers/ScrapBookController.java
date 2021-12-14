@@ -11,7 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
@@ -31,6 +33,9 @@ public class ScrapBookController {
     public TextField bookIdDel;
 
     @FXML
+    public Label invalidIdLabel;
+
+    @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
         Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
@@ -45,32 +50,52 @@ public class ScrapBookController {
         stage.show();
     }
 
-//    @FXML
-//    public void scrapBookButtonClick(ActionEvent actionEvent) {
-//        Integer bookIdGet = Integer.parseInt(bookIdDel.getText());
-//
-//        Books books = new Books();
-//        books.setId(bookIdGet);
-//
-//        Exemplars exemplar = new Exemplars();
-//        exemplar.setBookBookid(books);
-//
-//        service.deleteBook(books,exemplar);
-//    }
-
     @FXML
     public void scrapBookButtonClick(ActionEvent actionEvent) {
-        Integer bookIdGet = Integer.parseInt(bookIdDel.getText());
+        if(invalidIdLabel.getText().isBlank() || invalidIdLabel.getText().isEmpty()){
+            invalidIdLabel.setText("invalid id");
+            invalidIdLabel.setTextFill(Color.RED);
+            invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+        }
+        else{
+            Integer bookIdGet = Integer.parseInt(bookIdDel.getText());
 
-        Books book = new Books();
-        book.setId(bookIdGet);
+            Books book = new Books();
+            book.setId(bookIdGet);
 
-        Booksstored booksstored = new Booksstored();
-        booksstored.setBooks(book);
+            if(!service.ifExist(book)) {
+                invalidIdLabel.setText("invalid id");
+                invalidIdLabel.setTextFill(Color.RED);
+                invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+            }
+            else {
+                Booksstored booksstored = new Booksstored();
+                booksstored.setBooks(book);
 
-        Exemplars exemplar = new Exemplars();
-        exemplar.setBookBookid(book);
+                Exemplars exemplar = new Exemplars();
+                exemplar.setBookBookid(book);
 
-        service.deleteBook(book,booksstored,exemplar);
+                service.deleteBook(book, booksstored, exemplar);
+                log.info("Book deleted successfully");
+                invalidIdLabel.setText("Book deleted successfully");
+                invalidIdLabel.setTextFill(Color.GREEN);
+                invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+            }
+        }
     }
 }
+
+
+//    Integer bookIdGet = Integer.parseInt(bookIdDel.getText());
+//
+//    Books book = new Books();
+//            book.setId(bookIdGet);
+//
+//                    Booksstored booksstored = new Booksstored();
+//                    booksstored.setBooks(book);
+//
+//                    Exemplars exemplar = new Exemplars();
+//                    exemplar.setBookBookid(book);
+//
+//                    service.deleteBook(book, booksstored, exemplar);
+//                    log.info("Book deleted successfully");

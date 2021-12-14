@@ -59,6 +59,7 @@ public class OperatorLoginController {
             stage.setResizable(false);
             stage.setTitle("Operator - " + opUsername.getText());
             stage.show();
+            log.info("Operator " + opUsername.getText() + " logged successfully");
         } else {
             labelWrongInfo.setText("Invalid username or password");
             log.error("Wrong username or password");

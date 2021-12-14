@@ -74,27 +74,43 @@ public class AddBookController {
 
         if(bookName.getText().isBlank()){
             wrongLabel.setText("Enter book name");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookAuthor.getText().isBlank()){
             wrongLabel.setText("Enter author name");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookGenre.getText().isBlank()){
             wrongLabel.setText("Enter genre");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookYear.getText().isBlank()){
             wrongLabel.setText("Enter valid year");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookIsForArchive.getText().isBlank()){
             wrongLabel.setText("Enter for archive - yes/no");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookTotal.getText().isBlank()){
             wrongLabel.setText("Enter total books");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookAvailable.getText().isBlank()){
             wrongLabel.setText("Enter available books");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else if(bookReadingRoom.getText().isBlank()){
             wrongLabel.setText("Enter books for reading room");
+            wrongLabel.setTextFill(Color.RED);
+            wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
         }
         else {
             //info za books
@@ -118,36 +134,58 @@ public class AddBookController {
 
             if(name.isBlank()){
                 wrongLabel.setText("Enter book name");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(author.isBlank()){
                 wrongLabel.setText("Enter author name");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(genre.isBlank()){
                 wrongLabel.setText("Enter genre");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(yearIf.isBlank() || Integer.parseInt(yearIf)>2021 || Integer.parseInt(yearIf)<1){
                 wrongLabel.setText("Enter valid year");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(isForArchive.isBlank() || (!isForArchive.equals(yes) && !isForArchive.equals(no))){
                 wrongLabel.setText("Enter for archive - yes/no");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(totalIf.isBlank()){
                 wrongLabel.setText("Enter total books");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(totalIf2 != availableIf2 + readingRoomIf2){
                 wrongLabel.setText("Book pieces don't match");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(availableIf2 != totalIf2 - readingRoomIf2){
                 wrongLabel.setText("Book pieces don't match");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(readingRoomIf2 != totalIf2 - availableIf2){
                 wrongLabel.setText("Book pieces don't match");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(availableIf.isBlank()){
                 wrongLabel.setText("Enter available books");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else if(readingRoomIf.isBlank()){
                 wrongLabel.setText("Enter books for reading room");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
             }
             else {
 
@@ -158,6 +196,7 @@ public class AddBookController {
 
                 wrongLabel.setText("Book added successfully");
                 wrongLabel.setTextFill(Color.GREEN);
+                wrongLabel.setStyle("-fx-background-color: white;-fx-alignment: center");
 
                 //define Books
                 Books book = new Books(name, author, genre, year, isForArchive);

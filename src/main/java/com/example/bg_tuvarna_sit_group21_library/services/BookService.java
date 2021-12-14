@@ -20,11 +20,11 @@ public class BookService {
         repository.addBook(b, bs, ex);
     }
 
-//    public void deleteBook(Books books, Exemplars exemplars){
-//        repository.deleteBook(books,exemplars);
-//    }
-
     public void deleteBook(Books books, Booksstored booksstored, Exemplars exemplars){
         repository.deleteBook(books,booksstored,exemplars);
+    }
+
+    public boolean ifExist(Books book){
+        return repository.ifExists(book);
     }
 }

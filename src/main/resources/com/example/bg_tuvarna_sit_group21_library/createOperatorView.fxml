@@ -60,7 +60,7 @@
       <TextField fx:id="opTwoNames" layoutX="543.0" layoutY="27.0" />
       <TextField fx:id="opPhone" layoutX="543.0" layoutY="67.0" />
       <TextField fx:id="opEmail" layoutX="543.0" layoutY="107.0" />
-      <Label fx:id="wrongLabel" layoutX="421.0" layoutY="151.0" prefHeight="37.0" prefWidth="273.0" textFill="RED" wrapText="true">
+      <Label fx:id="wrongLabel" layoutX="412.0" layoutY="151.0" prefHeight="37.0" prefWidth="316.0" textFill="RED" wrapText="true">
          <font>
             <Font name="Algerian" size="15.0" />
          </font>

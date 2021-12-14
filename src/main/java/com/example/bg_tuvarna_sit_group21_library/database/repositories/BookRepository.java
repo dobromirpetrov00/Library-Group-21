@@ -7,6 +7,10 @@ import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class BookRepository {
     public static BookRepository getInstance() { return BookRepository.BookRepositoryHolder.INSTANCE;}
@@ -33,31 +37,38 @@ public class BookRepository {
         }
     }
 
-//    public void deleteBook(Books books, Exemplars exemplars){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        try{
-//            session.delete(exemplars.getId());
-//            session.delete(books.getId());
-//            log.info("Book deleted successfully");
-//        } catch (Exception ex) {
-//            log.error("Delete book error: " + ex.getMessage());
-//            //Connection.openSessionClose();
-//        } finally {
-//            transaction.commit();
-//        }
-//    }
-
-    ////////////////////////////////////
-    // stoinostite sa NULL v obektite //
-    ////////////////////////////////////
-    public void deleteBook(Books book, Booksstored booksstored, Exemplars exemplars){
+    public boolean ifExists(Books book){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
-        try{
-            session.delete(exemplars);
-            session.delete(booksstored);
-            session.delete(book);
+
+        String exists = "select 1 from Books t where t.id=:id";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",book.getId());
+
+        return (query.uniqueResult() != null);
+    }
+
+    public void deleteBook(Books book, Booksstored booksstored, Exemplars exemplars) {
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+
+            String exsql = "delete from Exemplars where bookBookid=:bookBookid";
+            Query exempq = session.createQuery(exsql);
+            exempq.setParameter("bookBookid",exemplars.getBookBookid());
+
+            String bssql = "delete from Booksstored where id=:id";
+            Query booksstq = session.createQuery(bssql);
+            booksstq.setParameter("id",book.getId());
+
+            String booksql = "delete from Books where id=:id";
+            Query bookq = session.createQuery(booksql);
+            bookq.setParameter("id",book.getId());
+
+            exempq.executeUpdate();
+            booksstq.executeUpdate();
+            bookq.executeUpdate();
+
             log.info("Book deleted successfully");
         } catch (Exception ex) {
             log.error("Delete book error: " + ex.getMessage());
