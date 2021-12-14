@@ -48,40 +48,44 @@ public class BookRepository {
         return (query.uniqueResult() != null);
     }
 
-    public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored){
+    public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored) {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
-        try{
+
+        Integer bkid = book.getId();
+
+        try {
             String exupd = "UPDATE Exemplars SET stateStateid = 2 WHERE bookBookid = :bookBookid";
             Query exquery = session.getSession().createQuery(exupd);
-            exquery.setParameter("bookBookid",book.getId());
+            exquery.setParameter("bookBookid", book);
 
-            String bkstupd = "UPDATE Booksstored SET readingroom = readingroom - 1 WHERE id = :id";
+            String bkstupd = "UPDATE Booksstored SET readingroom = readingroom - 1, total = total - 1 WHERE id = :id";
             Query bkstquery = session.getSession().createQuery(bkstupd);
-            bkstquery.setParameter("id",book.getId());
+            bkstquery.setParameter("id", bkid);
 
             String bkupd = "UPDATE Books SET isarchived = 'yes' WHERE id = :id";
             Query bookquery = session.getSession().createQuery(bkupd);
-            bookquery.setParameter("id",book.getId());
+            bookquery.setParameter("id", bkid);
 
-            exquery.executeUpdate();
-            bkstquery.executeUpdate();
             bookquery.executeUpdate();
+            bkstquery.executeUpdate();
+            exquery.executeUpdate();
 
             log.info("Book archived successfully");
-        } catch (Exception e){
+        } catch (Exception e) {
             log.error("Archive book error: " + e.getMessage());
         } finally {
             transaction.commit();
         }
+    }
 
 //    public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored){
 //        Session session = Connection.openSession();
 //        Transaction transaction = session.beginTransaction();
 //        try{
 //            session.update(book);
-//            session.update(booksstored);
 //            session.update(exemplar);
+//            session.update(booksstored);
 //
 //            log.info("Book archived successfully");
 //        } catch (Exception e){
@@ -89,7 +93,7 @@ public class BookRepository {
 //        } finally {
 //            transaction.commit();
 //        }
-    }
+//    }
 
     public void deleteBook(Books book, Booksstored booksstored, Exemplars exemplars) {
         Session session = Connection.openSession();

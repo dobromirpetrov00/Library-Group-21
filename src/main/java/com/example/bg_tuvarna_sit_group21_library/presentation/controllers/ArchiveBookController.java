@@ -59,8 +59,9 @@ public class ArchiveBookController {
         booksstored.setBooks(book);
 
         service.archivedBook(book,exemplar,booksstored);
-        bookInfoLabel.setText("Book archived succesfully");
-        bookInfoLabel.setStyle("-fx-alignment: center; -fx-background-color: white");
+
+//        bookInfoLabel.setText("Book archived succesfully");
+//        bookInfoLabel.setStyle("-fx-alignment: center; -fx-background-color: white");
     }
 
     @FXML
