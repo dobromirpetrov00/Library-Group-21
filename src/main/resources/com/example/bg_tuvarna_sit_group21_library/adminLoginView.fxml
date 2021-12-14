@@ -39,7 +39,6 @@
       </Label>
       <PasswordField fx:id="passwordField" layoutX="362.0" layoutY="189.0" />
       <TextField fx:id="usernameField" layoutX="148.0" layoutY="189.0" />
-      <Label fx:id="imageShow" layoutX="129.0" layoutY="279.0" prefHeight="77.0" prefWidth="403.0" textFill="WHITE" />
       <Label fx:id="labelWrongInfo" layoutX="169.0" layoutY="306.0" prefHeight="24.0" prefWidth="323.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Algerian" size="20.0" />

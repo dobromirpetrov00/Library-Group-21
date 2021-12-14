@@ -40,9 +40,6 @@ public class AdminLoginController {
     public Label labelWrongInfo;
 
     @FXML
-    public Label imageShow;
-
-    @FXML
     public Button goBackButton;
 
     @FXML
@@ -78,8 +75,8 @@ public class AdminLoginController {
             log.info("Admin " + usernameField.getText() + " logged successfully");
         } else {
             labelWrongInfo.setText("Invalid username or password");
+            labelWrongInfo.setStyle("-fx-alignment: center; -fx-background-color: white");
             log.error("Wrong username or password");
-            imageShow.setStyle("-fx-background-color: #851b1b");
         }
     }
 

@@ -30,9 +30,6 @@ public class OperatorLoginController {
     public PasswordField opPassword;
 
     @FXML
-    public Label imageShow;
-
-    @FXML
     public Label labelWrongInfo;
 
     @FXML
@@ -60,10 +57,11 @@ public class OperatorLoginController {
             stage.setTitle("Operator - " + opUsername.getText());
             stage.show();
             log.info("Operator " + opUsername.getText() + " logged successfully");
-        } else {
+        }
+        else {
             labelWrongInfo.setText("Invalid username or password");
+            labelWrongInfo.setStyle("-fx-alignment: center; -fx-background-color: white");
             log.error("Wrong username or password");
-            imageShow.setStyle("-fx-background-color: #851b1b");
         }
     }
 
