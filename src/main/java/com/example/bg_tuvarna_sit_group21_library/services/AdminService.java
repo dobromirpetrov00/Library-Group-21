@@ -2,6 +2,7 @@ package com.example.bg_tuvarna_sit_group21_library.services;
 
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
@@ -69,4 +70,23 @@ public class AdminService {
     public Integer returnLastId(){
         return repository.getLastId();
     }
+
+    public int needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
+
+//    public int getAllNeedToBeArchived() {
+//        List<Users> users = repository.getAllUsers();
+//
+//        return FXCollections.observableList(
+//                users
+//                        .stream()
+//                        .map(t -> new UsersListViewModel(
+//                                t.getId(),
+//                                t.getUsername(),
+//                                t.getPassword(),
+//                                t.getApprovaldate(),
+//                                t.getRating(),
+//                                t.getStatusStatusid().getId(),
+//                                t.getUserUsertypeid().getId()
+//                        )).collect(Collectors.toList()));
+//    }
 }

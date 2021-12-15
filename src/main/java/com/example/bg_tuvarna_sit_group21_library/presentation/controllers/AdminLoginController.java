@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -72,6 +69,19 @@ public class AdminLoginController {
             stage.setResizable(false);
             stage.setTitle("Administrator - " + usernameField.getText());
             stage.show();
+
+            ///////////////////////////////////////////
+
+            int count = 0;
+            count = service.needToBeArchive();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Books needed to be archived");
+            alert.setHeaderText(count + " books need to be archived !");
+            alert.showAndWait();
+
+            ///////////////////////////////////////////
+
             log.info("Admin " + usernameField.getText() + " logged successfully");
         } else {
             labelWrongInfo.setText("Invalid username or password");

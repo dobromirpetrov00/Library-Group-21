@@ -1,16 +1,22 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserRepository {
     private static final Logger log = Logger.getLogger(UserRepository.class);
@@ -38,6 +44,50 @@ public class UserRepository {
 
         return users;
     }
+
+    public int getAllNeedToBeArchived(){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Books> books = new LinkedList<>();
+
+        int count = 0;
+        String yes="yes";
+
+        String archived = "SELECT t FROM Books t";
+
+        books.addAll(session.createQuery(archived, Books.class).getResultList());
+
+        for(Books b : books){
+            if(b.getIsarchived().equals(yes))
+                count++;
+        }
+
+        ////String archived = "SELECT t FROM Books t WHERE Books.isarchived=:isarch";
+        //Query query = session.getSession().createQuery(archived);
+        //query.setParameter("id", book.getId());
+        //query.setParameter("isarchived", "yes");
+
+        ////books.addAll(session.createQuery(archived, Books.class).setParameter("isarch",yes).getResultList());
+
+        ////count = books.size();
+
+        return count;
+    }
+
+//    public boolean needToBeArchived(Books book){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//        //List<Books> books = new LinkedList<>();
+//
+//        String archived = "select t from Books t where id=:id and isarchived=:isarchived";
+//        Query query = session.getSession().createQuery(archived);
+//        query.setParameter("id", book.getId());
+//        query.setParameter("isarchived", "yes");
+//
+//        log.info("Get all need to archive books");
+//
+//        return (query.uniqueResult() != null);
+//    }
 
     public void createUser(Users user, UserInfos userInfos, Forms forms){
         Session session = Connection.openSession();
