@@ -2,6 +2,7 @@ package com.example.bg_tuvarna_sit_group21_library.services;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Bookstates;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.BookRepository;
 
@@ -28,7 +29,9 @@ public class BookService {
         return repository.ifExists(book);
     }
 
-    public boolean ifArchive(Books book){ return repository.ifArchived(book); }
+    public boolean ifArchive(Books book, Bookstates bookstate){ return repository.ifArchived(book, bookstate); }
+
+//    public boolean ifArchive(Books book){ return repository.ifArchived(book); }
 
     public void archivedBook(Books book, Exemplars exemplar, Booksstored booksstored){
         repository.archiveBook(book, exemplar, booksstored);

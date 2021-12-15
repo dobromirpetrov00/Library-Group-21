@@ -49,12 +49,16 @@ public class ArchiveBookController {
             Books book = new Books();
             book.setId(bookIdGet);
 
+            Bookstates bookstate = new Bookstates();
+            bookstate.setId(2);
+            bookstate.setState("archived");
+
             if (!service.ifExist(book)) {
                 bookInfoLabel.setText("id doesn't exist");
                 bookInfoLabel.setTextFill(Color.RED);
                 bookInfoLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
-            else if(!service.ifArchive(book)){
+            else if(service.ifArchive(book, bookstate)){
                 bookInfoLabel.setText("book is already archived");
                 bookInfoLabel.setTextFill(Color.RED);
                 bookInfoLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
@@ -65,12 +69,12 @@ public class ArchiveBookController {
                 //Books
                 //Books book = new Books();
                 book.setId(bookGetId);
-                book.setIsarchived("yes");
+                //book.setIsarchived("yes");
 
                 //Bookstates
-                Bookstates bookstate = new Bookstates();
-                bookstate.setId(2);
-                bookstate.setState("archived");
+//                Bookstates bookstate = new Bookstates();
+//                bookstate.setId(2);
+//                bookstate.setState("archived");
 
                 //Exemplars
                 Exemplars exemplar = new Exemplars();
@@ -91,6 +95,62 @@ public class ArchiveBookController {
             }
         }
     }
+
+//    @FXML
+//    public void archiveBookButtonClick(ActionEvent actionEvent) {
+//
+//        if (bookArchiveId.getText().isBlank() || bookArchiveId.getText().isEmpty()) {
+//            bookInfoLabel.setText("blank id");
+//            bookInfoLabel.setTextFill(Color.RED);
+//            bookInfoLabel.setStyle("-fx-alignment: center; -fx-background-color: white");
+//        } else {
+//            Integer bookIdGet = Integer.parseInt(bookArchiveId.getText());
+//
+//            Books book = new Books();
+//            book.setId(bookIdGet);
+//
+//            if (!service.ifExist(book)) {
+//                bookInfoLabel.setText("id doesn't exist");
+//                bookInfoLabel.setTextFill(Color.RED);
+//                bookInfoLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+//            }
+//            else if(!service.ifArchive(book)){
+//                bookInfoLabel.setText("book is already archived");
+//                bookInfoLabel.setTextFill(Color.RED);
+//                bookInfoLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+//            }
+//            else {
+//                Integer bookGetId = Integer.parseInt(bookArchiveId.getText());
+//
+//                //Books
+//                //Books book = new Books();
+//                book.setId(bookGetId);
+//                book.setIsarchived("yes");
+//
+//                //Bookstates
+//                Bookstates bookstate = new Bookstates();
+//                bookstate.setId(2);
+//                bookstate.setState("archived");
+//
+//                //Exemplars
+//                Exemplars exemplar = new Exemplars();
+//                exemplar.setBookBookid(book);
+//                exemplar.setStateStateid(bookstate);
+//
+//                //Booksstored
+//                Booksstored booksstored = new Booksstored();
+//                booksstored.setBooks(book);
+//
+//                service.archivedBook(book, exemplar, booksstored);
+//
+//                bookInfoLabel.setText("Book archived succesfully");
+//                bookInfoLabel.setTextFill(Color.GREEN);
+//                bookInfoLabel.setStyle("-fx-alignment: center; -fx-background-color: white");
+//
+//                log.info("Book archived successfully");
+//            }
+//        }
+//    }
 
     @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {

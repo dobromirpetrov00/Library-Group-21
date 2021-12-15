@@ -3,6 +3,7 @@ package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Bookstates;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -48,18 +49,32 @@ public class BookRepository {
         return (query.uniqueResult() != null);
     }
 
-    public boolean ifArchived(Books book){
+    public boolean ifArchived(Books book, Bookstates bookstate){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
 
-        String archived = "select 1 from Books where id=:id and isarchived=:isarchived";
+        String archived = "select 1 from Exemplars where bookBookid=:bookBookid and stateStateid=:stateStateid";
         Query query = session.getSession().createQuery(archived);
-        query.setParameter("id",book.getId());
-        query.setParameter("isarchived","no");
+        query.setParameter("bookBookid",book);
+        query.setParameter("stateStateid",bookstate);
 
         return (query.uniqueResult() != null);
     }
 
+    // трябва проверката дали е архивирана да става в exemplars
+//    public boolean ifArchived(Books book){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        String archived = "select 1 from Books where id=:id and isarchived=:isarchived";
+//        Query query = session.getSession().createQuery(archived);
+//        query.setParameter("id",book.getId());
+//        query.setParameter("isarchived","no");
+//
+//        return (query.uniqueResult() != null);
+//    }
+
+    //не трябва да се променя isarchived
     public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored) {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
@@ -75,11 +90,11 @@ public class BookRepository {
             Query bkstquery = session.getSession().createQuery(bkstupd);
             bkstquery.setParameter("id", bkid);
 
-            String bkupd = "UPDATE Books SET isarchived = 'yes' WHERE id = :id";
-            Query bookquery = session.getSession().createQuery(bkupd);
-            bookquery.setParameter("id", bkid);
+//            String bkupd = "UPDATE Books SET isarchived = 'yes' WHERE id = :id";
+//            Query bookquery = session.getSession().createQuery(bkupd);
+//            bookquery.setParameter("id", bkid);
 
-            bookquery.executeUpdate();
+//            bookquery.executeUpdate();
             bkstquery.executeUpdate();
             exquery.executeUpdate();
 
