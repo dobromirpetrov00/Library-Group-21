@@ -11,7 +11,11 @@ import javafx.stage.Stage;
 
 public class HelloController {
     @FXML
+    public Button exitButton;
+
+    @FXML
     private Button operatorLoginButton;
+
     @FXML
     private Button adminLoginButton;
 
@@ -35,6 +39,7 @@ public class HelloController {
 
     }
 
+    @FXML
     public void onAdminLoginButtonClick(ActionEvent actionEvent) {
         try {
             Stage stage2 = (Stage) adminLoginButton.getScene().getWindow();
@@ -50,5 +55,11 @@ public class HelloController {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void exitButtonClick(ActionEvent actionEvent) {
+        Stage stage2 = (Stage) exitButton.getScene().getWindow();
+        stage2.close();
     }
 }

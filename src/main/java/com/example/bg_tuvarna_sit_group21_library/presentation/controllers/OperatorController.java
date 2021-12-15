@@ -16,16 +16,34 @@ public class OperatorController {
     public Button goBackButton;
 
     @FXML
-    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
+    public Button createReaderProfileButton;
+
+    @FXML
+    public void createReaderProfileButtonClick(ActionEvent actionEvent) throws IOException {
         Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.View.HELLO_VIEW));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.createReaderProfileView));
         Parent root = (Parent) fxmlLoader.load();
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("Login Menu");
+        stage.setTitle("Create Reader Profile");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) goBackButton.getScene().getWindow();
+        stage2.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.operatorLoginView));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Operator Login");
         stage.setResizable(false);
         stage.show();
     }

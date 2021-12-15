@@ -45,11 +45,26 @@ public class UserRepository {
         try{
             session.save(user);
             session.save(forms);
-            //session.save(user);
             session.save(userInfos);
             log.info("User created successfully");
         } catch (Exception ex) {
             log.error("Insert user error: " + ex.getMessage());
+            //Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public void createReader(Users user, UserInfos userInfos, Forms forms){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.save(user);
+            session.save(forms);
+            session.save(userInfos);
+            log.info("Reader created successfully");
+        } catch (Exception ex) {
+            log.error("Insert reader error: " + ex.getMessage());
             //Connection.openSessionClose();
         } finally {
             transaction.commit();

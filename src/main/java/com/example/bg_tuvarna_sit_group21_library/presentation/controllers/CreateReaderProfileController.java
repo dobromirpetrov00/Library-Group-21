@@ -3,6 +3,7 @@ package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import com.example.bg_tuvarna_sit_group21_library.services.AdminService;
+import com.example.bg_tuvarna_sit_group21_library.services.OperatorService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -18,92 +18,91 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
-public class CreateOperatorController {
-
-    private final AdminService service = AdminService.getInstance();
-    private static final Logger log = Logger.getLogger(AdminLoginController.class);
-
-    @FXML
-    public Button createOperatorButton;
-
-    @FXML
-    public TextField opName;
-
-    @FXML
-    public PasswordField opPass;
-
-    @FXML
-    public TextField opDate;
-
-    @FXML
-    public TextField opRating;
+public class CreateReaderProfileController {
+    private final OperatorService service = OperatorService.getInstance();
+    private static final Logger log = Logger.getLogger(CreateReaderProfileController.class);
 
     @FXML
     public Button goBackButton;
 
     @FXML
-    public TextField opTwoNames;
+    public Button createReaderButton;
 
     @FXML
-    public TextField opPhone;
+    public TextField rdUsername;
 
     @FXML
-    public TextField opEmail;
+    public TextField rdPassword;
+
+    @FXML
+    public TextField rdApprovalDate;
+
+    @FXML
+    public TextField rdRating;
+
+    @FXML
+    public TextField rdTwoNames;
+
+    @FXML
+    public TextField rdPhone;
+
+    @FXML
+    public TextField rdEmail;
 
     @FXML
     public Label wrongLabel;
 
     @FXML
-    public void createOperatorButtonPressed(ActionEvent actionEvent) {
-        if (opName.getText().isBlank()) {
+    public void createReaderButtonClick(ActionEvent actionEvent) {
+        if (rdUsername.getText().isBlank()) {
             wrongLabel.setText("Enter a username");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opPass.getText().isBlank()) {
+        else if (rdPassword.getText().isBlank()) {
             wrongLabel.setText("Enter a password");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opDate.getText().isBlank()) {
+        else if (rdApprovalDate.getText().isBlank()) {
             wrongLabel.setText("Enter a valid date (ex: 01012020)");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opRating.getText().isBlank()) {
+        else if (rdRating.getText().isBlank()) {
             wrongLabel.setText("Enter rating from 1 to 10");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opTwoNames.getText().isBlank()) {
+        else if (rdTwoNames.getText().isBlank()) {
             wrongLabel.setText("Enter two names");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opPhone.getText().isBlank()) {
+        else if (rdPhone.getText().isBlank()) {
             wrongLabel.setText("Enter phone number - 10 numbers");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
-        else if (opEmail.getText().isBlank()) {
+        else if (rdEmail.getText().isBlank()) {
             wrongLabel.setText("Enter an email");
             wrongLabel.setTextFill(Color.RED);
             wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
         }
         else {
-            String name = opName.getText();
-            String pass = opPass.getText();
-            String dateIf = opDate.getText();
-            String rate = opRating.getText();
-            String twoNames = opTwoNames.getText();
-            String phone = opPhone.getText();
-            String email = opEmail.getText();
+            String name = rdUsername.getText();
+            String pass = rdPassword.getText();
+            String dateIf = rdApprovalDate.getText();
+            String rate = rdRating.getText();
+            String twoNames = rdTwoNames.getText();
+            String phone = rdPhone.getText();
+            String email = rdEmail.getText();
 
             Statuses st = new Statuses();
             st.setId(1);
 
             Usertypes ut = new Usertypes();
-            ut.setId(2);
+            ut.setId(3);
 
             if (name.isBlank()) {
                 wrongLabel.setText("Enter a username");
@@ -151,9 +150,9 @@ public class CreateOperatorController {
                 wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
             else {
-                int date = Integer.parseInt(opDate.getText());
+                int date = Integer.parseInt(rdApprovalDate.getText());
 
-                wrongLabel.setText("Operator added successfully");
+                wrongLabel.setText("Reader added successfully");
                 wrongLabel.setTextFill(Color.GREEN);
                 wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
 
@@ -161,24 +160,24 @@ public class CreateOperatorController {
                 UserInfos v = new UserInfos(twoNames, phone, email, u);
                 Forms f = new Forms(date, u);
 
-                service.createOperator(u, v, f);
-                log.info("Operator added successfully");
+                service.createReaderProfile(u, v, f);
+                log.info("Reader added successfully");
             }
         }
     }
 
     @FXML
-    public void onGoBackButtonClick(ActionEvent actionEvent) throws IOException {
+    public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
         Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminView));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.operatorView));
         Parent root = (Parent) fxmlLoader.load();
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setTitle("Operator Menu");
         stage.setResizable(false);
-        stage.setTitle("Administrator Menu");
         stage.show();
     }
 }
