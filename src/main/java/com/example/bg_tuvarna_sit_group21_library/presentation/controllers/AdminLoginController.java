@@ -70,8 +70,6 @@ public class AdminLoginController {
             stage.setTitle("Administrator - " + usernameField.getText());
             stage.show();
 
-            ///////////////////////////////////////////
-
             int count = 0;
             count = service.needToBeArchive();
 
@@ -79,8 +77,6 @@ public class AdminLoginController {
             alert.setTitle("Books needed to be archived");
             alert.setHeaderText(count + " books need to be archived !");
             alert.showAndWait();
-
-            ///////////////////////////////////////////
 
             log.info("Admin " + usernameField.getText() + " logged successfully");
         } else {

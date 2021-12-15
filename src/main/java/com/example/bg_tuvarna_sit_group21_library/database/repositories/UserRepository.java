@@ -62,32 +62,8 @@ public class UserRepository {
                 count++;
         }
 
-        ////String archived = "SELECT t FROM Books t WHERE Books.isarchived=:isarch";
-        //Query query = session.getSession().createQuery(archived);
-        //query.setParameter("id", book.getId());
-        //query.setParameter("isarchived", "yes");
-
-        ////books.addAll(session.createQuery(archived, Books.class).setParameter("isarch",yes).getResultList());
-
-        ////count = books.size();
-
         return count;
     }
-
-//    public boolean needToBeArchived(Books book){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        //List<Books> books = new LinkedList<>();
-//
-//        String archived = "select t from Books t where id=:id and isarchived=:isarchived";
-//        Query query = session.getSession().createQuery(archived);
-//        query.setParameter("id", book.getId());
-//        query.setParameter("isarchived", "yes");
-//
-//        log.info("Get all need to archive books");
-//
-//        return (query.uniqueResult() != null);
-//    }
 
     public void createUser(Users user, UserInfos userInfos, Forms forms){
         Session session = Connection.openSession();

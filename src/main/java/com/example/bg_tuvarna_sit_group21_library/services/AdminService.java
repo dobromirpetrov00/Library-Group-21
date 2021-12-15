@@ -72,21 +72,4 @@ public class AdminService {
     }
 
     public int needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
-
-//    public int getAllNeedToBeArchived() {
-//        List<Users> users = repository.getAllUsers();
-//
-//        return FXCollections.observableList(
-//                users
-//                        .stream()
-//                        .map(t -> new UsersListViewModel(
-//                                t.getId(),
-//                                t.getUsername(),
-//                                t.getPassword(),
-//                                t.getApprovaldate(),
-//                                t.getRating(),
-//                                t.getStatusStatusid().getId(),
-//                                t.getUserUsertypeid().getId()
-//                        )).collect(Collectors.toList()));
-//    }
 }
