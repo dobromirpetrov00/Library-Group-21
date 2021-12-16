@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.SignOutReaderController">
+<AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.SignOutReaderController">
    <children>
       <ImageView fitHeight="365.0" fitWidth="659.0">
          <image>
@@ -19,8 +18,8 @@
       </ImageView>
       <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="272.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
       <Button id="record-sales" fx:id="signOutReaderButton" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" onAction="#signOutReaderButtonClick" prefHeight="69.0" prefWidth="145.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Sign Out Reader" />
-      <TextField fx:id="rdUsername" layoutX="255.0" layoutY="125.0" />
-      <TextField fx:id="rdID" layoutX="66.0" layoutY="125.0" />
+      <TextField fx:id="rdUsername" layoutX="255.0" layoutY="125.0" promptText="Enter username" />
+      <TextField fx:id="rdID" layoutX="66.0" layoutY="125.0" promptText="Enter ID" />
       <Label layoutX="131.0" layoutY="94.0" text="ID" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
@@ -36,7 +35,10 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="wrongLabel" layoutX="329.0" layoutY="63.0" />
-      <PasswordField fx:id="rdPassword" layoutX="444.0" layoutY="125.0" />
+      <Label fx:id="wrongLabel" layoutX="159.0" layoutY="62.0" prefHeight="24.0" prefWidth="342.0">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font></Label>
+      <PasswordField fx:id="rdPassword" layoutX="444.0" layoutY="125.0" promptText="Enter password" />
    </children>
 </AnchorPane>

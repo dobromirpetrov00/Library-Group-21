@@ -74,8 +74,8 @@ public class SignOutReaderController {
             else {
                 service.deleteReaderPr(reader, readerUserinfo, readerForm);
 
-                log.info("Book deleted successfully");
-                wrongLabel.setText("Book deleted successfully");
+                log.info("Reader signed out successfully");
+                wrongLabel.setText("Reader signed out successfully");
                 wrongLabel.setTextFill(Color.GREEN);
                 wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
