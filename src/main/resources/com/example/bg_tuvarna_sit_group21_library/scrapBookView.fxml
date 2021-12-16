@@ -17,13 +17,13 @@
       </ImageView>
       <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="282.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
       <Button id="record-sales" fx:id="scrapBookButton" layoutX="262.0" layoutY="183.0" mnemonicParsing="false" onAction="#scrapBookButtonClick" prefHeight="73.0" prefWidth="136.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Scrap Book" />
-      <Label layoutX="161.0" layoutY="87.0" prefHeight="25.0" prefWidth="149.0" text="enter book id" textFill="WHITE">
+      <Label layoutX="161.0" layoutY="129.0" prefHeight="25.0" prefWidth="149.0" text="enter book id" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="bookIdDel" layoutX="350.0" layoutY="87.0" promptText="Enter book ID" />
-      <Label fx:id="invalidIdLabel" layoutX="181.0" layoutY="134.0" prefHeight="24.0" prefWidth="297.0" textFill="RED">
+      <TextField fx:id="bookIdDel" layoutX="350.0" layoutY="129.0" promptText="Enter book ID" />
+      <Label fx:id="invalidIdLabel" layoutX="182.0" layoutY="94.0" prefHeight="24.0" prefWidth="297.0" textFill="RED">
          <font>
             <Font name="Algerian" size="20.0" />
          </font>

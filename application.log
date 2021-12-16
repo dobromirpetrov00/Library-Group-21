@@ -528,3 +528,4 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.OperatorLoginController  - Wrong username or password
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.OperatorLoginController  - Wrong username or password
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.OperatorLoginController  - Wrong username or password
