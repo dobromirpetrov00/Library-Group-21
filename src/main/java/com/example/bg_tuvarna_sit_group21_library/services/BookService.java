@@ -17,6 +17,10 @@ public class BookService {
         public static final BookService INSTANCE = new BookService();
     }
 
+    public boolean alreadySetForLater(Books book) { return repository.alreadySetToArchiveLater(book); }
+
+    public void archiveBookLater(Books book){ repository.archiveBookForLater(book); }
+
     public void addBook(Books b, Booksstored bs, Exemplars ex){
         repository.addBook(b, bs, ex);
     }

@@ -17,6 +17,7 @@ public class Constants {
         public static final String archiveBookView = "/com/example/bg_tuvarna_sit_group21_library/archiveBookView.fxml";
         public static final String scrapBookView = "/com/example/bg_tuvarna_sit_group21_library/scrapBookView.fxml";
         public static final String createReaderProfileView = "/com/example/bg_tuvarna_sit_group21_library/createReaderProfileView.fxml";
+        public static final String archiveForLaterView = "/com/example/bg_tuvarna_sit_group21_library/archiveForLaterView.fxml";
     }
 
     public static class Configurations {

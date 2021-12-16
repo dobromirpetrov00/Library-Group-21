@@ -95,7 +95,17 @@ public class BookMenuController {
     }
 
     @FXML
-    public void archiveForLaterButtonClick(ActionEvent actionEvent) {
+    public void archiveForLaterButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) archiveBookButton.getScene().getWindow();
+        stage2.close();
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.archiveForLaterView));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Remind to Archive for Later");
+        stage.show();
     }
 }

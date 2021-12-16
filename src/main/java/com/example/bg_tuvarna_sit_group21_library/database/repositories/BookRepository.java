@@ -22,6 +22,41 @@ public class BookRepository {
 
     private static final Logger log = Logger.getLogger(BookRepository.class);
 
+    public boolean alreadySetToArchiveLater(Books book){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Integer bkid = book.getId();
+        String bkarch = "yes";
+
+        String exists = "select 1 from Books t where t.id=:id and t.isarchived=:isarch";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",bkid);
+        query.setParameter("isarch",bkarch);
+
+        return (query.uniqueResult() != null);
+    }
+
+    public void archiveBookForLater(Books book){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Integer bkid = book.getId();
+
+        try {
+            String bkupd = "UPDATE Books SET isarchived = 'yes' WHERE id = :id";
+            Query bookquery = session.getSession().createQuery(bkupd);
+            bookquery.setParameter("id", bkid);
+
+            bookquery.executeUpdate();
+            log.info("Book successfully set to archive for later");
+        } catch (Exception e){
+            log.error("Archive for later error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+    }
+
     public void addBook(Books book, Booksstored booksstored, Exemplars exemplars){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
