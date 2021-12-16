@@ -52,7 +52,7 @@ public class ScrapBookController {
 
     @FXML
     public void scrapBookButtonClick(ActionEvent actionEvent) {
-        if(invalidIdLabel.getText().isBlank() || invalidIdLabel.getText().isEmpty()){
+        if(bookIdDel.getText().isBlank() || bookIdDel.getText().isEmpty()){
             invalidIdLabel.setText("blank id");
             invalidIdLabel.setTextFill(Color.RED);
             invalidIdLabel.setStyle("-fx-background-color: white; -fx-alignment: center");

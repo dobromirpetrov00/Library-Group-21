@@ -43,6 +43,10 @@ public class OperatorService {
         repository.createReader(a, v, f);
     }
 
+    public void deleteReaderPr(Users u, UserInfos v, Forms f) { repository.deleteReader(u, v, f); }
+
+    public boolean ifExistss(Users reader) { return repository.ifExists(reader); }
+
     public boolean operatorLogin(UsersListViewModel a) {
 
         ObservableList<UsersListViewModel> allUsers = getAllUsers();

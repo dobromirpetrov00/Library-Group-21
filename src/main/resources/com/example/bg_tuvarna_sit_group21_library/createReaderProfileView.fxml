@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -53,7 +54,6 @@
          </font>
       </Label>
       <TextField fx:id="rdUsername" layoutX="185.0" layoutY="27.0" promptText="Enter username" />
-      <TextField fx:id="rdPassword" layoutX="185.0" layoutY="67.0" promptText="Enter password" />
       <TextField fx:id="rdApprovalDate" layoutX="185.0" layoutY="107.0" promptText="Enter approval date" />
       <TextField fx:id="rdRating" layoutX="185.0" layoutY="147.0" promptText="Enter rating from 1 to 10" />
       <TextField fx:id="rdTwoNames" layoutX="543.0" layoutY="27.0" promptText="Enter two names" />
@@ -64,5 +64,6 @@
             <Font name="Algerian" size="15.0" />
          </font>
       </Label>
+      <PasswordField fx:id="rdPassword" layoutX="185.0" layoutY="67.0" promptText="Enter password" />
    </children>
 </AnchorPane>

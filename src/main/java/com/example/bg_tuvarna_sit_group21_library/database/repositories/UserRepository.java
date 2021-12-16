@@ -109,6 +109,47 @@ public class UserRepository {
         }
     }
 
+    public void deleteReader(Users user, UserInfos userInfos, Forms forms){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+
+            String formsql = "delete from Forms where usersUserid=:usersUserid";
+            Query formq = session.createQuery(formsql);
+            formq.setParameter("usersUserid",forms.getUsersUserid());
+
+            String userInfosql = "delete from UserInfos where id=:id";
+            Query userInfoq = session.createQuery(userInfosql);
+            userInfoq.setParameter("id",user.getId());
+
+            String usersql = "delete from Users where id=:id";
+            Query userq = session.createQuery(usersql);
+            userq.setParameter("id",user.getId());
+
+            formq.executeUpdate();
+            userInfoq.executeUpdate();
+            userq.executeUpdate();
+
+            log.info("Reader signed out successfully");
+        } catch (Exception ex) {
+            log.error("Reader sign out error: " + ex.getMessage());
+            //Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public boolean ifExists(Users reader){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String exists = "select 1 from Users t where t.id=:id";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",reader.getId());
+
+        return (query.uniqueResult() != null);
+    }
+
     public Integer getLastId() {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();

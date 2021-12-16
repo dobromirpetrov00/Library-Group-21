@@ -114,7 +114,7 @@ public class OperatorController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("Give Book");
+        stage.setTitle("Get Back Book");
         stage.setResizable(false);
         stage.show();
     }
@@ -129,7 +129,7 @@ public class OperatorController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("Give Book");
+        stage.setTitle("Sign Out Reader");
         stage.setResizable(false);
         stage.show();
     }

@@ -161,7 +161,6 @@ public class BookRepository {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
         try {
-
             String exsql = "delete from Exemplars where bookBookid=:bookBookid";
             Query exempq = session.createQuery(exsql);
             exempq.setParameter("bookBookid",exemplars.getBookBookid());
