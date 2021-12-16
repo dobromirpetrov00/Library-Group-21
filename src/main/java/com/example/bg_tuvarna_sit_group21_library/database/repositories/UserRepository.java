@@ -143,9 +143,11 @@ public class UserRepository {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
 
-        String exists = "select 1 from Users t where t.id=:id";
+        String exists = "select 1 from Users t where t.id=:id and t.username=:username and t.password=:password";
         Query query = session.getSession().createQuery(exists);
         query.setParameter("id",reader.getId());
+        query.setParameter("username",reader.getUsername());
+        query.setParameter("password",reader.getPassword());
 
         return (query.uniqueResult() != null);
     }
