@@ -14,6 +14,8 @@ public class Constants {
         public static final String createOperatorView = "/com/example/bg_tuvarna_sit_group21_library/createOperatorView.fxml";
         public static final String addBookView = "/com/example/bg_tuvarna_sit_group21_library/addBookView.fxml";
         public static final String giveBookView = "/com/example/bg_tuvarna_sit_group21_library/giveBookView.fxml";
+        public static final String getBackBookView = "/com/example/bg_tuvarna_sit_group21_library/getBackBookView.fxml";
+        public static final String signOutReaderView = "/com/example/bg_tuvarna_sit_group21_library/signOutReaderView.fxml";
         public static final String archiveBookView = "/com/example/bg_tuvarna_sit_group21_library/archiveBookView.fxml";
         public static final String scrapBookView = "/com/example/bg_tuvarna_sit_group21_library/scrapBookView.fxml";
         public static final String createReaderProfileView = "/com/example/bg_tuvarna_sit_group21_library/createReaderProfileView.fxml";
