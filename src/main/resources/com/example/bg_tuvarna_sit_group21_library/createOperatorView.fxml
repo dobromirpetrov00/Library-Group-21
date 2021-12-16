@@ -37,10 +37,10 @@
             <Font name="Algerian" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="opName" layoutX="185.0" layoutY="27.0" />
-      <TextField fx:id="opDate" layoutX="185.0" layoutY="107.0" />
-      <TextField fx:id="opRating" layoutX="185.0" layoutY="147.0" />
-      <PasswordField fx:id="opPass" layoutX="185.0" layoutY="67.0" />
+      <TextField fx:id="opName" layoutX="185.0" layoutY="27.0" promptText="Enter username" />
+      <TextField fx:id="opDate" layoutX="185.0" layoutY="107.0" promptText="Enter approval date" />
+      <TextField fx:id="opRating" layoutX="185.0" layoutY="147.0" promptText="Enter rating from 1 to 10" />
+      <PasswordField fx:id="opPass" layoutX="185.0" layoutY="67.0" promptText="Enter password" />
       <Button id="record-sales" fx:id="goBackButton" layoutX="439.0" layoutY="203.0" mnemonicParsing="false" onAction="#onGoBackButtonClick" prefHeight="52.0" prefWidth="139.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
       <Label layoutX="421.0" layoutY="31.0" text="two names" textFill="WHITE">
          <font>
@@ -57,9 +57,9 @@
             <Font name="Algerian" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="opTwoNames" layoutX="543.0" layoutY="27.0" />
-      <TextField fx:id="opPhone" layoutX="543.0" layoutY="67.0" />
-      <TextField fx:id="opEmail" layoutX="543.0" layoutY="107.0" />
+      <TextField fx:id="opTwoNames" layoutX="543.0" layoutY="27.0" promptText="Enter two names" />
+      <TextField fx:id="opPhone" layoutX="543.0" layoutY="67.0" promptText="Enter 10 numbers" />
+      <TextField fx:id="opEmail" layoutX="543.0" layoutY="107.0" promptText="Enter email" />
       <Label fx:id="wrongLabel" layoutX="412.0" layoutY="151.0" prefHeight="37.0" prefWidth="316.0" textFill="RED" wrapText="true">
          <font>
             <Font name="Algerian" size="15.0" />

@@ -52,13 +52,13 @@
             <Font name="Algerian" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="rdUsername" layoutX="185.0" layoutY="27.0" />
-      <TextField fx:id="rdPassword" layoutX="185.0" layoutY="67.0" />
-      <TextField fx:id="rdApprovalDate" layoutX="185.0" layoutY="107.0" />
-      <TextField fx:id="rdRating" layoutX="185.0" layoutY="147.0" />
-      <TextField fx:id="rdTwoNames" layoutX="543.0" layoutY="27.0" />
-      <TextField fx:id="rdPhone" layoutX="543.0" layoutY="67.0" />
-      <TextField fx:id="rdEmail" layoutX="543.0" layoutY="107.0" />
+      <TextField fx:id="rdUsername" layoutX="185.0" layoutY="27.0" promptText="Enter username" />
+      <TextField fx:id="rdPassword" layoutX="185.0" layoutY="67.0" promptText="Enter password" />
+      <TextField fx:id="rdApprovalDate" layoutX="185.0" layoutY="107.0" promptText="Enter approval date" />
+      <TextField fx:id="rdRating" layoutX="185.0" layoutY="147.0" promptText="Enter rating from 1 to 10" />
+      <TextField fx:id="rdTwoNames" layoutX="543.0" layoutY="27.0" promptText="Enter two names" />
+      <TextField fx:id="rdPhone" layoutX="543.0" layoutY="67.0" promptText="Enter 10 numbers" />
+      <TextField fx:id="rdEmail" layoutX="543.0" layoutY="107.0" promptText="Enter email" />
       <Label fx:id="wrongLabel" layoutX="412.0" layoutY="151.0" prefHeight="37.0" prefWidth="316.0">
          <font>
             <Font name="Algerian" size="15.0" />

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.ArchiveBookController">
    <children>
       <ImageView fitHeight="365.0" fitWidth="659.0">
@@ -17,9 +16,14 @@
          </image>
       </ImageView>
       <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="295.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
-      <TextField fx:id="bookArchiveId" layoutX="255.0" layoutY="140.0" />
+      <TextField fx:id="bookArchiveId" layoutX="350.0" layoutY="140.0" promptText="Enter book ID" />
       <Button id="record-sales" fx:id="archiveBookButton" layoutX="251.0" layoutY="183.0" mnemonicParsing="false" onAction="#archiveBookButtonClick" prefHeight="74.0" prefWidth="157.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Archive Book" />
       <Label fx:id="bookInfoLabel" layoutX="177.0" layoutY="100.0" prefHeight="24.0" prefWidth="306.0">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="169.0" layoutY="141.0" text="enter book id" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
          </font>

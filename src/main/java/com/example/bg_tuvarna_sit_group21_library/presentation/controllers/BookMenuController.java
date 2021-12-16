@@ -31,6 +31,9 @@ public class BookMenuController {
     public Button goBackButton;
 
     @FXML
+    public Button archiveForLaterButton;
+
+    @FXML
     public void onAddBookButtonClick(ActionEvent actionEvent) throws IOException {
 
         Stage stage2 = (Stage) addBookButton.getScene().getWindow();
@@ -89,5 +92,10 @@ public class BookMenuController {
         stage.setResizable(false);
         stage.setTitle("Administrator Menu");
         stage.show();
+    }
+
+    @FXML
+    public void archiveForLaterButtonClick(ActionEvent actionEvent) {
+
     }
 }

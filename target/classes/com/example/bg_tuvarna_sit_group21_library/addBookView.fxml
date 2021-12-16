@@ -57,14 +57,14 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="bookName" layoutX="131.0" layoutY="35.0" />
-      <TextField fx:id="bookAuthor" layoutX="131.0" layoutY="90.0" />
-      <TextField fx:id="bookGenre" layoutX="131.0" layoutY="145.0" />
-      <TextField fx:id="bookYear" layoutX="131.0" layoutY="200.0" />
-      <TextField fx:id="bookIsForArchive" layoutX="490.0" layoutY="35.0" />
-      <TextField fx:id="bookTotal" layoutX="490.0" layoutY="90.0" />
-      <TextField fx:id="bookAvailable" layoutX="490.0" layoutY="145.0" />
-      <TextField fx:id="bookReadingRoom" layoutX="490.0" layoutY="200.0" />
+      <TextField fx:id="bookName" layoutX="131.0" layoutY="35.0" promptText="Enter book name" />
+      <TextField fx:id="bookAuthor" layoutX="131.0" layoutY="90.0" promptText="Enter book author" />
+      <TextField fx:id="bookGenre" layoutX="131.0" layoutY="145.0" promptText="Enter book genre" />
+      <TextField fx:id="bookYear" layoutX="131.0" layoutY="200.0" promptText="Enter book year" />
+      <TextField fx:id="bookIsForArchive" layoutX="490.0" layoutY="35.0" promptText="Enter YES or NO" />
+      <TextField fx:id="bookTotal" layoutX="490.0" layoutY="90.0" promptText="Total number of books" />
+      <TextField fx:id="bookAvailable" layoutX="490.0" layoutY="145.0" promptText="Books for rent" />
+      <TextField fx:id="bookReadingRoom" layoutX="490.0" layoutY="200.0" promptText="Books for reading room" />
       <Label fx:id="wrongLabel" layoutX="203.0" layoutY="240.0" prefHeight="25.0" prefWidth="278.0" textAlignment="CENTER" textFill="RED" wrapText="true">
          <font>
             <Font name="Algerian" size="20.0" />

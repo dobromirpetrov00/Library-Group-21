@@ -16,5 +16,6 @@
       <Button id="record-sales" fx:id="archiveBookButton" layoutX="464.0" layoutY="147.0" mnemonicParsing="false" onAction="#onArchiveBookButtonClick" prefHeight="71.0" prefWidth="141.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Archive Book" />
       <Button id="record-sales" fx:id="scrapBookButton" layoutX="264.0" layoutY="147.0" mnemonicParsing="false" onAction="#onScrapBookButtonClick" prefHeight="71.0" prefWidth="141.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Scrap Book" />
       <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="300.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <Button id="record-sales" fx:id="archiveForLaterButton" layoutX="426.0" layoutY="231.0" mnemonicParsing="false" onAction="#archiveForLaterButtonClick" prefHeight="35.0" prefWidth="218.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Remind to Archive for Later" wrapText="true" />
    </children>
 </AnchorPane>

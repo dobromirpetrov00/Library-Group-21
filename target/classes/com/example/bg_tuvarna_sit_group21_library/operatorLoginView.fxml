@@ -16,7 +16,7 @@
             <Image url="@../../../images/loginImage.jpg" />
          </image>
       </ImageView>
-            <TextField fx:id="opUsername" layoutX="135.0" layoutY="113.0" />
+            <TextField fx:id="opUsername" layoutX="135.0" layoutY="113.0" promptText="Enter username" />
       <Label layoutX="163.0" layoutY="78.0" text="Username" textFill="WHITE">
          <font>
             <Font name="Algerian" size="18.0" />
@@ -28,7 +28,7 @@
          </font>
       </Label>
             <Button id="record-sales" fx:id="operatorLogin" layoutX="212.0" layoutY="162.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="42.0" prefWidth="98.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Login" />
-      <PasswordField fx:id="opPassword" layoutX="383.0" layoutY="113.0" />
+      <PasswordField fx:id="opPassword" layoutX="383.0" layoutY="113.0" promptText="Enter password" />
       <Label fx:id="labelWrongInfo" layoutX="168.0" layoutY="236.0" prefHeight="24.0" prefWidth="323.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Algerian" size="20.0" />

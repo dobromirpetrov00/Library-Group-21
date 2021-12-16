@@ -37,8 +37,8 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <PasswordField fx:id="passwordField" layoutX="362.0" layoutY="189.0" />
-      <TextField fx:id="usernameField" layoutX="148.0" layoutY="189.0" />
+      <PasswordField fx:id="passwordField" layoutX="362.0" layoutY="189.0" promptText="Enter password" />
+      <TextField fx:id="usernameField" layoutX="148.0" layoutY="189.0" promptText="Enter username" />
       <Label fx:id="labelWrongInfo" layoutX="169.0" layoutY="306.0" prefHeight="24.0" prefWidth="323.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Algerian" size="20.0" />
