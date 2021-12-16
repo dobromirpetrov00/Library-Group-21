@@ -71,5 +71,7 @@ public class AdminService {
         return repository.getLastId();
     }
 
-    public int needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
+    public List<Books> needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
+
+//    public int needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
 }

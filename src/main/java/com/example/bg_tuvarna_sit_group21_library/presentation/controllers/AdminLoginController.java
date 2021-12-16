@@ -2,6 +2,7 @@ package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.services.AdminService;
@@ -71,11 +72,44 @@ public class AdminLoginController {
             stage.show();
 
             int count = 0;
-            count = service.needToBeArchive();
+            //count = service.needToBeArchive();
+
+            String yes = "yes";
+
+            List<Books> books2;
+            books2 = service.needToBeArchive();
+
+            for(Books b : books2){
+                if(b.getIsarchived().equals(yes))
+                    count++;
+            }
+
+            // масив, в когото да са id-тата
+            int[] ids = new int[count];
+            int a = 0;
+
+            //for(int i = 0; i<count; i++){
+                for(Books b : books2){
+                    if(b.getIsarchived().equals(yes)) {
+                        ids[a] = b.getId();
+                        a++;
+                        //ids[i] = b.getId();
+                    }
+                }
+            //}
+
+            StringBuilder contIds = new StringBuilder("");
+
+            for(int i = 0; i<count; i++) {
+                contIds.append("ID_").append(i+1).append(": ").append(ids[i]).append("\n");
+            }
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Books needed to be archived");
+            alert.setTitle("Books to archive");
             alert.setHeaderText(count + " books need to be archived !");
+
+            alert.setContentText(String.valueOf(contIds));
+
             alert.showAndWait();
 
             log.info("Admin " + usernameField.getText() + " logged successfully");

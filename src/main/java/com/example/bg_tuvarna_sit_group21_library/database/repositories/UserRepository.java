@@ -45,25 +45,37 @@ public class UserRepository {
         return users;
     }
 
-    public int getAllNeedToBeArchived(){
+    public List<Books> getAllNeedToBeArchived(){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
         List<Books> books = new LinkedList<>();
-
-        int count = 0;
-        String yes="yes";
 
         String archived = "SELECT t FROM Books t";
 
         books.addAll(session.createQuery(archived, Books.class).getResultList());
 
-        for(Books b : books){
-            if(b.getIsarchived().equals(yes))
-                count++;
-        }
-
-        return count;
+        return books;
     }
+
+//    public int getAllNeedToBeArchived(){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//        List<Books> books = new LinkedList<>();
+//
+//        int count = 0;
+//        String yes="yes";
+//
+//        String archived = "SELECT t FROM Books t";
+//
+//        books.addAll(session.createQuery(archived, Books.class).getResultList());
+//
+//        for(Books b : books){
+//            if(b.getIsarchived().equals(yes))
+//                count++;
+//        }
+//
+//        return count;
+//    }
 
     public void createUser(Users user, UserInfos userInfos, Forms forms){
         Session session = Connection.openSession();
