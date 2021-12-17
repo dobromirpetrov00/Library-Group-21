@@ -90,18 +90,19 @@ public class GiveBookController {
                 wrongLabel.setTextFill(Color.RED);
                 wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
-            else if(!bservice.ifLeftEn(book,booksstored)) {
-                wrongLabel.setText("no books left to lend");
-                wrongLabel.setTextFill(Color.RED);
-                wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
-            }
             else if(lendDateField.getText().length() != 8){
                 wrongLabel.setText("invalid date (ex. 01012020)");
                 wrongLabel.setTextFill(Color.RED);
                 wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
             }
+            else if(!bservice.ifLeftEn(book,booksstored)) {
+                wrongLabel.setText("no books left to lend");
+                wrongLabel.setTextFill(Color.RED);
+                wrongLabel.setStyle("-fx-background-color: white; -fx-alignment: center");
+            }
             else {
                 service.lendABook(lender, book, lendinfo, lendbook);
+                bservice.rmvOneBookFromAvailable(book);
 
                 wrongLabel.setText("book lent successfully");
                 wrongLabel.setTextFill(Color.GREEN);

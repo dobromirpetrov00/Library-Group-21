@@ -70,6 +70,26 @@ public class BookRepository {
         }
     }
 
+    public void removeBookFromAvailable(Books book){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Integer bkid = book.getId();
+
+        try {
+            String bkstupd = "UPDATE Booksstored SET available = available - 1, total = total - 1 WHERE id = :id";
+            Query bkstquery = session.getSession().createQuery(bkstupd);
+            bkstquery.setParameter("id", bkid);
+
+            bkstquery.executeUpdate();
+            log.info("Removed one book from available");
+        } catch (Exception e){
+            log.error("Remove one from available error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+    }
+
     public boolean ifLeftEnough(Books book, Booksstored bookstored){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();

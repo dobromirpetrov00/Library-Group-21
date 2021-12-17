@@ -29,6 +29,8 @@ public class BookService {
         repository.deleteBook(books,booksstored,exemplars);
     }
 
+    public void rmvOneBookFromAvailable(Books book) { repository.removeBookFromAvailable(book); }
+
     public boolean ifLeftEn(Books book, Booksstored booksstored) { return repository.ifLeftEnough(book, booksstored); }
 
     public boolean ifExist(Books book){
