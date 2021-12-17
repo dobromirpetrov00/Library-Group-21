@@ -2,6 +2,7 @@ package com.example.bg_tuvarna_sit_group21_library.database.Entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "books")
@@ -33,8 +34,11 @@ public class Books implements Serializable {
     @PrimaryKeyJoinColumn
     private Booksstored booksstored;
 
-    @OneToOne(mappedBy = "bookBookid")
-    private Lendinfos lendinfos;
+    @OneToMany(mappedBy = "bookBookid")
+    private Set<Lendinfos> lendinfosSet;
+
+    /*@OneToOne(mappedBy = "bookBookid")
+    private Lendinfos lendinfos;*/
 
     public Books(){
 
@@ -112,13 +116,21 @@ public class Books implements Serializable {
         this.booksstored = booksstored;
     }
 
-    public Lendinfos getLendinfos() {
+    public Set<Lendinfos> getLendinfosSet() {
+        return lendinfosSet;
+    }
+
+    public void setLendinfosSet(Set<Lendinfos> lendinfosSet) {
+        this.lendinfosSet = lendinfosSet;
+    }
+
+    /*public Lendinfos getLendinfos() {
         return lendinfos;
     }
 
     public void setLendinfos(Lendinfos lendinfos) {
         this.lendinfos = lendinfos;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -131,7 +143,22 @@ public class Books implements Serializable {
                 ", isarchived='" + isarchived + '\'' +
                 ", exemplars=" + exemplars +
                 ", booksstored=" + booksstored +
-                ", lendinfos=" + lendinfos +
+                ", lendinfosSet=" + lendinfosSet +
                 '}';
     }
+
+    /*@Override
+    public String toString() {
+        return "Books{" +
+                "id=" + id +
+                ", bookname='" + bookname + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", year=" + year +
+                ", isarchived='" + isarchived + '\'' +
+                ", exemplars=" + exemplars +
+                ", booksstored=" + booksstored +
+                ", lendinfos=" + lendinfos +
+                '}';
+    }*/
 }

@@ -10,13 +10,26 @@ public class Lendinfos {
     @Column(name = "lendinfoid", nullable = false)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "book_bookid",referencedColumnName = "bookid", nullable = false)
     private Books bookBookid;
+
+    /*@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_bookid", referencedColumnName = "bookid", nullable = false)
+    private Books bookBookid;*/
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "lend_lendbooksid", referencedColumnName = "lendbooksid", nullable = false)
     private Lendbooks lendLendbooksid;
+
+    public Lendinfos() {
+
+    }
+
+    public Lendinfos(Books bookBookid, Lendbooks lendLendbooksid) {
+        this.bookBookid = bookBookid;
+        this.lendLendbooksid = lendLendbooksid;
+    }
 
     public Integer getId() {
         return id;

@@ -17,8 +17,17 @@ public class Lendbooks {
     private Lendinfos lendinfos;
 
     @ManyToOne
-    @JoinColumn(name = "user_userid", nullable = false)
+    @JoinColumn(name = "user_userid",referencedColumnName = "userid", nullable = false)
     private Users usersUserid;
+
+    public Lendbooks() {
+
+    }
+
+    public Lendbooks(Users usersUserid, Integer lenddate) {
+        this.lenddate = lenddate;
+        this.usersUserid = usersUserid;
+    }
 
     public Integer getId() {
         return id;

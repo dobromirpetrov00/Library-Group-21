@@ -10,9 +10,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class BookRepository {
     public static BookRepository getInstance() { return BookRepository.BookRepositoryHolder.INSTANCE;}
 
@@ -73,6 +70,17 @@ public class BookRepository {
         }
     }
 
+    public boolean ifLeftEnough(Books book, Booksstored bookstored){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String exists = "select 1 from Booksstored t where t.id=:id and t.available>0";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",book.getId());
+
+        return (query.uniqueResult() != null);
+    }
+
     public boolean ifExists(Books book){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
@@ -96,20 +104,6 @@ public class BookRepository {
         return (query.uniqueResult() != null);
     }
 
-    // трябва проверката дали е архивирана да става в exemplars
-//    public boolean ifArchived(Books book){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//        String archived = "select 1 from Books where id=:id and isarchived=:isarchived";
-//        Query query = session.getSession().createQuery(archived);
-//        query.setParameter("id",book.getId());
-//        query.setParameter("isarchived","no");
-//
-//        return (query.uniqueResult() != null);
-//    }
-
-    //не трябва да се променя isarchived
     public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored) {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
@@ -140,22 +134,6 @@ public class BookRepository {
             transaction.commit();
         }
     }
-
-//    public void archiveBook(Books book, Exemplars exemplar, Booksstored booksstored){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        try{
-//            session.update(book);
-//            session.update(exemplar);
-//            session.update(booksstored);
-//
-//            log.info("Book archived successfully");
-//        } catch (Exception e){
-//            log.error("Archive book error: " + e.getMessage());
-//        } finally {
-//            transaction.commit();
-//        }
-//    }
 
     public void deleteBook(Books book, Booksstored booksstored, Exemplars exemplars) {
         Session session = Connection.openSession();

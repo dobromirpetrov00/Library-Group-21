@@ -1,8 +1,6 @@
 package com.example.bg_tuvarna_sit_group21_library.services;
 
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
 import javafx.collections.FXCollections;
@@ -39,6 +37,10 @@ public class OperatorService {
                         )).collect(Collectors.toList()));
     }
 
+    public void lendABook(Users lender, Books book, Lendinfos lendinfo, Lendbooks lendbook) {
+        repository.lendBook(lender,book,lendinfo,lendbook);
+    }
+
     public void createReaderProfile(Users a, UserInfos v, Forms f){
         repository.createReader(a, v, f);
     }
@@ -46,6 +48,8 @@ public class OperatorService {
     public void deleteReaderPr(Users u, UserInfos v, Forms f) { repository.deleteReader(u, v, f); }
 
     public boolean ifExistss(Users reader) { return repository.ifExists(reader); }
+
+    public boolean ifReaderExist(Users reader) { return repository.ifReaderExists(reader); }
 
     public boolean operatorLogin(UsersListViewModel a) {
 

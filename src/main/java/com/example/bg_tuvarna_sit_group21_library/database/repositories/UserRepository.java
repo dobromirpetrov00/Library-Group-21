@@ -1,13 +1,7 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
-import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,7 +10,6 @@ import org.hibernate.query.Query;
 import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserRepository {
     private static final Logger log = Logger.getLogger(UserRepository.class);
@@ -57,25 +50,21 @@ public class UserRepository {
         return books;
     }
 
-//    public int getAllNeedToBeArchived(){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        List<Books> books = new LinkedList<>();
-//
-//        int count = 0;
-//        String yes="yes";
-//
-//        String archived = "SELECT t FROM Books t";
-//
-//        books.addAll(session.createQuery(archived, Books.class).getResultList());
-//
-//        for(Books b : books){
-//            if(b.getIsarchived().equals(yes))
-//                count++;
-//        }
-//
-//        return count;
-//    }
+    public void lendBook(Users lender, Books book, Lendinfos lendinfo, Lendbooks lendbook){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.save(lendbook);
+            session.save(lendinfo);
+
+            log.info("Book lent successfully");
+        } catch (Exception ex) {
+            log.error("Book lent error: " + ex.getMessage());
+            //Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
 
     public void createUser(Users user, UserInfos userInfos, Forms forms){
         Session session = Connection.openSession();
@@ -137,6 +126,17 @@ public class UserRepository {
         } finally {
             transaction.commit();
         }
+    }
+
+    public boolean ifReaderExists(Users reader){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String exists = "select 1 from Users t where t.id=:id";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",reader.getId());
+
+        return (query.uniqueResult() != null);
     }
 
     public boolean ifExists(Users reader){
