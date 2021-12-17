@@ -1,9 +1,6 @@
 package com.example.bg_tuvarna_sit_group21_library.services;
 
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Bookstates;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.BookRepository;
 
 public class BookService {
@@ -30,6 +27,12 @@ public class BookService {
     }
 
     public void rmvOneBookFromAvailable(Books book) { repository.removeBookFromAvailable(book); }
+
+    public void rmvBookUserLend(Books book, Users reader) { repository.removeBookUserLend(book, reader); }
+
+//    public void rmvBookFromLendInfos(Books book) { repository.removeBookFromLendInfos(book); }
+//
+//    public void rmvUserFromLendBook(Users reader) { repository.removeUserFromLendBooks(reader); }
 
     public boolean ifLeftEn(Books book, Booksstored booksstored) { return repository.ifLeftEnough(book, booksstored); }
 

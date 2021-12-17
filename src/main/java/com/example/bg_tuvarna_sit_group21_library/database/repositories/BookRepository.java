@@ -1,10 +1,7 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Booksstored;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Bookstates;
-import com.example.bg_tuvarna_sit_group21_library.database.Entities.Exemplars;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -90,6 +87,60 @@ public class BookRepository {
         }
     }
 
+/*    public Integer getLendBooksId(Users user){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String lndbookid = "SELECT 1 FROM Lendbooks WHERE usersUserid=:id";
+        Query lndbkqry = session.getSession().createQuery(lndbookid);
+        lndbkqry.setParameter("id", user);
+
+        lndbkqry.executeUpdate();
+        log.info("Get Lendbook ID successfully");
+
+        return
+    }*/
+
+//    public void removeBookFromLendInfos(Books book){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        Integer bkid = book.getId();
+//
+//        try {
+//            String bkstupd = "DELETE FROM Lendinfos WHERE bookBookid = :id";
+//            Query bkstquery = session.getSession().createQuery(bkstupd);
+//            bkstquery.setParameter("id", book);
+//
+//            bkstquery.executeUpdate();
+//            log.info("Book returned successfully");
+//        } catch (Exception e){
+//            log.error("Book return error: " + e.getMessage());
+//        } finally {
+//            transaction.commit();
+//        }
+//    }
+//
+//    public void removeUserFromLendBooks(Users reader){
+//        Session session = Connection.openSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        Integer user__id = reader.getId();
+//
+//        try {
+//            String bkstupd = "DELETE FROM Lendbooks WHERE usersUserid = :id";
+//            Query bkstquery = session.getSession().createQuery(bkstupd);
+//            bkstquery.setParameter("id", reader);
+//
+//            bkstquery.executeUpdate();
+//            log.info("Book returned successfully");
+//        } catch (Exception e){
+//            log.error("Book return error: " + e.getMessage());
+//        } finally {
+//            transaction.commit();
+//        }
+//    }
+
     public boolean ifLeftEnough(Books book, Booksstored bookstored){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
@@ -150,6 +201,30 @@ public class BookRepository {
             log.info("Book archived successfully");
         } catch (Exception e) {
             log.error("Archive book error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public void removeBookUserLend(Books book, Users reader){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try{
+            String booksql = "delete from Lendinfos where bookBookid=:bkid";
+            Query bookqry = session.createQuery(booksql);
+            bookqry.setParameter("bkid",book);
+
+            /*String readersql = "delete from Lendbooks where usersUserid=:rdrid";
+            Query readerqry = session.createQuery(readersql);
+            readerqry.setParameter("rdrid",reader);*/
+
+            bookqry.executeUpdate();
+            //readerqry.executeUpdate();
+
+            log.info("Book returned successfully");
+        } catch (Exception e){
+            log.error("Book return error: " + e.getMessage());
         } finally {
             transaction.commit();
         }
