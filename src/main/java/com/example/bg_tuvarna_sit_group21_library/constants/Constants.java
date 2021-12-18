@@ -20,6 +20,10 @@ public class Constants {
         public static final String scrapBookView = "/com/example/bg_tuvarna_sit_group21_library/scrapBookView.fxml";
         public static final String createReaderProfileView = "/com/example/bg_tuvarna_sit_group21_library/createReaderProfileView.fxml";
         public static final String archiveForLaterView = "/com/example/bg_tuvarna_sit_group21_library/archiveForLaterView.fxml";
+        public static final String bookInfosView = "/com/example/bg_tuvarna_sit_group21_library/booksInfoView.fxml";
+        public static final String submittedFormsView = "/com/example/bg_tuvarna_sit_group21_library/submittedFormsView.fxml";
+        public static final String usersInfoView = "/com/example/bg_tuvarna_sit_group21_library/usersInfoView.fxml";
+        public static final String usersRatingView = "/com/example/bg_tuvarna_sit_group21_library/usersRatingView.fxml";
     }
 
     public static class Configurations {

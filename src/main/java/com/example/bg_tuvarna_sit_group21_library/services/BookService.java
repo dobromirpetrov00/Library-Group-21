@@ -44,10 +44,6 @@ public class BookService {
 
     public boolean ifArchive(Books book, Bookstates bookstate){ return repository.ifArchived(book, bookstate); }
 
-    //public boolean needToBeArchive(Books book){ return repository.needToBeArchived(book); }
-
-//    public boolean ifArchive(Books book){ return repository.ifArchived(book); }
-
     public void archivedBook(Books book, Exemplars exemplar, Booksstored booksstored){
         repository.archiveBook(book, exemplar, booksstored);
     }
