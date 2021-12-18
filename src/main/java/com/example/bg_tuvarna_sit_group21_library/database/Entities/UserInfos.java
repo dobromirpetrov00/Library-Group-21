@@ -75,14 +75,14 @@ public class UserInfos {
         this.users = users;
     }
 
-//    @Override
-//    public String toString() {
-//        return "UserInfos{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", phone='" + phone + '\'' +
-//                ", email='" + email + '\'' +
-//                ", users=" + users +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "UserInfos{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }

@@ -20,6 +20,25 @@ public class UserRepository {
         public static final UserRepository INSTANCE = new UserRepository();
     }
 
+    public List<UserInfos> getUsersRatingAll(){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<UserInfos> userinfo = new LinkedList<>();
+
+        try{
+            String jpql = "select t from UserInfos t";
+            //String jpql = "select t.id, t.name from UserInfos t";
+            userinfo.addAll(session.createQuery(jpql, UserInfos.class).getResultList());
+            log.info("Got Users Rating successfully");
+        } catch (Exception e){
+            log.error("Get Users Rating error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+
+        return userinfo;
+    }
+
     public List<Users> getAllUsers() {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();

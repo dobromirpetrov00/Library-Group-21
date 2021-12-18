@@ -9,6 +9,7 @@ import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersRatingListViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,19 @@ public class AdminService {
 
     private static class AdminServiceHolder {
         public static final AdminService INSTANCE = new AdminService();
+    }
+
+    public ObservableList<UsersRatingListViewModel> getAllUsersRating(){
+        List<UserInfos> userInfos = repository.getUsersRatingAll();
+
+        return FXCollections.observableList(
+                userInfos
+                        .stream()
+                        .map(t -> new UsersRatingListViewModel(
+                                t.getId(),
+                                t.getName(),
+                                t.getUsers().getRating()
+                        )).collect(Collectors.toList()));
     }
 
     public ObservableList<UsersListViewModel> getAllUsers() {
@@ -73,5 +87,5 @@ public class AdminService {
 
     public List<Books> needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
 
-//    public int needToBeArchive(){ return repository.getAllNeedToBeArchived(); }
+
 }

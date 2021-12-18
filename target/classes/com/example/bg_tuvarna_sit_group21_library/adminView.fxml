@@ -24,5 +24,9 @@
       </Button>
       <Button id="record-sales" fx:id="bookOptions" layoutX="409.0" layoutY="152.0" mnemonicParsing="false" onAction="#onBookOptionsButtonClick" prefHeight="62.0" prefWidth="153.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Book Options" />
       <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="273.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <Button id="record-sales" fx:id="submittedFormsButton" layoutX="11.0" layoutY="58.0" mnemonicParsing="false" onAction="#submittedFormsButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Submitted Forms" />
+      <Button id="record-sales" fx:id="booksInfoButton" layoutX="178.0" layoutY="58.0" mnemonicParsing="false" onAction="#booksInfoButtonClick" prefHeight="42.0" prefWidth="137.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Books" />
+      <Button id="record-sales" fx:id="usersInfoButton" layoutX="345.0" layoutY="58.0" mnemonicParsing="false" onAction="#usersInfoButtonClick" prefHeight="42.0" prefWidth="137.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Users" />
+      <Button id="record-sales" fx:id="usersRatingButton" layoutX="512.0" layoutY="58.0" mnemonicParsing="false" onAction="#usersRatingButtonClick" prefHeight="42.0" prefWidth="137.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="User's Rating" />
    </children>
 </AnchorPane>

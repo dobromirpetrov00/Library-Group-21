@@ -45,11 +45,6 @@ public class Users {
 
     }
 
-//    public Users(Statuses statusStatusid, Usertypes userUsertypeid){
-//        this.statusStatusid=statusStatusid;
-//        this.userUsertypeid=userUsertypeid;
-//    }
-
     public Users(String username, String password, Integer approvaldate, String rating, Statuses statusStatusid, Usertypes userUsertypeid) {
         this.username = username;
         this.password = password;
