@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.GetBackBookController">
+<AnchorPane prefHeight="365.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.GetBackBookController">
    <children>
       <ImageView fitHeight="365.0" fitWidth="659.0">
          <image>
@@ -18,7 +17,7 @@
       </ImageView>
       <Button id="record-sales" fx:id="getBackBookButton" layoutX="135.0" layoutY="237.0" mnemonicParsing="false" onAction="#getBackBookButtonClick" prefHeight="68.0" prefWidth="142.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Get Back Book" />
       <Button id="record-sales" fx:id="goBackButton" layoutX="414.0" layoutY="265.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
-      <TextField fx:id="bookId" layoutX="380.0" layoutY="112.0" promptText="Enter Book ID" />
+      <TextField fx:id="bookId" layoutX="423.0" layoutY="112.0" promptText="Enter Book ID" />
       <TextField fx:id="rdUserId" layoutX="131.0" layoutY="67.0" promptText="Enter User ID" />
       <TextField fx:id="rdUsername" layoutX="131.0" layoutY="112.0" promptText="Enter Username" />
       <TextField fx:id="rdPassword" layoutX="131.0" layoutY="157.0" promptText="Enter Password" />
@@ -37,12 +36,18 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="417.0" layoutY="79.0" text="book id" textFill="WHITE">
+      <Label layoutX="341.0" layoutY="112.0" text="book id" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="wrongLabel" layoutX="441.0" layoutY="237.0">
+      <Label fx:id="wrongLabel" layoutX="305.0" layoutY="225.0" prefHeight="24.0" prefWidth="305.0">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lndbkIDfield" layoutX="423.0" layoutY="157.0" promptText="Enter Lendbook ID" />
+      <Label layoutX="293.0" layoutY="158.0" text="lendbook id" textFill="WHITE">
          <font>
             <Font name="Algerian" size="20.0" />
          </font>

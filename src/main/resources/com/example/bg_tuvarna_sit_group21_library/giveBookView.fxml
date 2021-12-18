@@ -40,5 +40,10 @@
             <Font name="Algerian" size="20.0" />
          </font>
       </Label>
+      <Label fx:id="lndbkIDLabel" layoutX="410.0" layoutY="207.0" prefHeight="24.0" prefWidth="198.0">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

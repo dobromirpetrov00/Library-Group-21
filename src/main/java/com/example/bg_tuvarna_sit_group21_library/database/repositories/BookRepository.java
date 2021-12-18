@@ -87,60 +87,6 @@ public class BookRepository {
         }
     }
 
-/*    public Integer getLendBooksId(Users user){
-        Session session = Connection.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        String lndbookid = "SELECT 1 FROM Lendbooks WHERE usersUserid=:id";
-        Query lndbkqry = session.getSession().createQuery(lndbookid);
-        lndbkqry.setParameter("id", user);
-
-        lndbkqry.executeUpdate();
-        log.info("Get Lendbook ID successfully");
-
-        return
-    }*/
-
-//    public void removeBookFromLendInfos(Books book){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//        Integer bkid = book.getId();
-//
-//        try {
-//            String bkstupd = "DELETE FROM Lendinfos WHERE bookBookid = :id";
-//            Query bkstquery = session.getSession().createQuery(bkstupd);
-//            bkstquery.setParameter("id", book);
-//
-//            bkstquery.executeUpdate();
-//            log.info("Book returned successfully");
-//        } catch (Exception e){
-//            log.error("Book return error: " + e.getMessage());
-//        } finally {
-//            transaction.commit();
-//        }
-//    }
-//
-//    public void removeUserFromLendBooks(Users reader){
-//        Session session = Connection.openSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//        Integer user__id = reader.getId();
-//
-//        try {
-//            String bkstupd = "DELETE FROM Lendbooks WHERE usersUserid = :id";
-//            Query bkstquery = session.getSession().createQuery(bkstupd);
-//            bkstquery.setParameter("id", reader);
-//
-//            bkstquery.executeUpdate();
-//            log.info("Book returned successfully");
-//        } catch (Exception e){
-//            log.error("Book return error: " + e.getMessage());
-//        } finally {
-//            transaction.commit();
-//        }
-//    }
-
     public boolean ifLeftEnough(Books book, Booksstored bookstored){
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
@@ -190,41 +136,12 @@ public class BookRepository {
             Query bkstquery = session.getSession().createQuery(bkstupd);
             bkstquery.setParameter("id", bkid);
 
-//            String bkupd = "UPDATE Books SET isarchived = 'yes' WHERE id = :id";
-//            Query bookquery = session.getSession().createQuery(bkupd);
-//            bookquery.setParameter("id", bkid);
-
-//            bookquery.executeUpdate();
             bkstquery.executeUpdate();
             exquery.executeUpdate();
 
             log.info("Book archived successfully");
         } catch (Exception e) {
             log.error("Archive book error: " + e.getMessage());
-        } finally {
-            transaction.commit();
-        }
-    }
-
-    public void removeBookUserLend(Books book, Users reader){
-        Session session = Connection.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        try{
-            String booksql = "delete from Lendinfos where bookBookid=:bkid";
-            Query bookqry = session.createQuery(booksql);
-            bookqry.setParameter("bkid",book);
-
-            /*String readersql = "delete from Lendbooks where usersUserid=:rdrid";
-            Query readerqry = session.createQuery(readersql);
-            readerqry.setParameter("rdrid",reader);*/
-
-            bookqry.executeUpdate();
-            //readerqry.executeUpdate();
-
-            log.info("Book returned successfully");
-        } catch (Exception e){
-            log.error("Book return error: " + e.getMessage());
         } finally {
             transaction.commit();
         }
@@ -254,6 +171,79 @@ public class BookRepository {
         } catch (Exception ex) {
             log.error("Delete book error: " + ex.getMessage());
             //Connection.openSessionClose();
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public boolean ifLendbookIDExists(Lendbooks lendbook){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String exists = "select 1 from Lendbooks t where t.id=:id";
+        Query query = session.getSession().createQuery(exists);
+        query.setParameter("id",lendbook.getId());
+
+        return (query.uniqueResult() != null);
+    }
+
+    public int getLendBookId(Users reader, Lendbooks lendbookDate){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String lndbkid = "select t.id from Lendbooks t where usersUserid=:userid and lenddate=:lnddate";
+        Query lndbkidqry = session.createQuery(lndbkid);
+        lndbkidqry.setParameter("userid",reader);
+        lndbkidqry.setParameter("lnddate",lendbookDate.getLenddate());
+
+        int lbid = (int) lndbkidqry.uniqueResult();
+
+        log.info("Get Lendbook ID successfully");
+
+        return lbid;
+    }
+
+    public void removeBookUserLend(Books book, Users reader, Lendbooks lendbook){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try{
+            String booksql = "delete from Lendinfos where bookBookid=:bkid and lendLendbooksid=:lnbdkid";
+            Query bookqry = session.createQuery(booksql);
+            bookqry.setParameter("bkid",book);
+            bookqry.setParameter("lnbdkid",lendbook);
+
+            String readersql = "delete from Lendbooks where usersUserid=:rdrid and id=:lnbid";
+            Query readerqry = session.createQuery(readersql);
+            readerqry.setParameter("rdrid",reader);
+            readerqry.setParameter("lnbid",lendbook.getId());
+
+            bookqry.executeUpdate();
+            readerqry.executeUpdate();
+
+            log.info("Book returned successfully");
+        } catch (Exception e){
+            log.error("Book return error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+    }
+
+    public void addBookToAvailable(Books book){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Integer bkid = book.getId();
+
+        try {
+            String bkstupd = "UPDATE Booksstored SET available = available + 1, total = total + 1 WHERE id = :id";
+            Query bkstquery = session.getSession().createQuery(bkstupd);
+            bkstquery.setParameter("id", bkid);
+
+            bkstquery.executeUpdate();
+            log.info("Added one book to available");
+        } catch (Exception e){
+            log.error("Add one book to available error: " + e.getMessage());
         } finally {
             transaction.commit();
         }

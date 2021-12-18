@@ -28,11 +28,13 @@ public class BookService {
 
     public void rmvOneBookFromAvailable(Books book) { repository.removeBookFromAvailable(book); }
 
-    public void rmvBookUserLend(Books book, Users reader) { repository.removeBookUserLend(book, reader); }
+    public void rmvBookUserLend(Books book, Users reader, Lendbooks lendbook) { repository.removeBookUserLend(book, reader, lendbook); }
 
-//    public void rmvBookFromLendInfos(Books book) { repository.removeBookFromLendInfos(book); }
-//
-//    public void rmvUserFromLendBook(Users reader) { repository.removeUserFromLendBooks(reader); }
+    public int getLndBkID(Users reader, Lendbooks lendbook) { return repository.getLendBookId(reader,lendbook); }
+
+    public boolean checkIfLendBookIDExists(Lendbooks lendbook) { return repository.ifLendbookIDExists(lendbook); }
+
+    public void addBookAvailable(Books book) { repository.addBookToAvailable(book); }
 
     public boolean ifLeftEn(Books book, Booksstored booksstored) { return repository.ifLeftEnough(book, booksstored); }
 

@@ -42,6 +42,9 @@ public class GiveBookController {
     public Label wrongLabel;
 
     @FXML
+    public Label lndbkIDLabel;
+
+    @FXML
     public void giveBookButtonClick(ActionEvent actionEvent) {
         if (userIdField.getText().isBlank() || userIdField.getText().isEmpty()) {
             wrongLabel.setText("blank user id");
@@ -103,6 +106,12 @@ public class GiveBookController {
             else {
                 service.lendABook(lender, book, lendinfo, lendbook);
                 bservice.rmvOneBookFromAvailable(book);
+
+                int lndbkid = bservice.getLndBkID(lender,lendbook);
+                String lbid = String.valueOf(lndbkid);
+                lndbkIDLabel.setText("lendbookd id: " + lbid);
+                lndbkIDLabel.setTextFill(Color.GREEN);
+                lndbkIDLabel.setStyle("-fx-alignment: center; -fx-background-color: white");
 
                 wrongLabel.setText("book lent successfully");
                 wrongLabel.setTextFill(Color.GREEN);
