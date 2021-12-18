@@ -8,6 +8,7 @@ import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.SubmittedFormsListViewModel;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.UserInfoListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersRatingListViewModel;
@@ -56,6 +57,24 @@ public class AdminService {
                                 t.getId(),
                                 t.getName(),
                                 t.getUsers().getRating()
+                        )).collect(Collectors.toList()));
+    }
+
+    public ObservableList<UserInfoListViewModel> getUserInfoAll(){
+        List<Users> users = repository.getUsersInfo();
+
+        return FXCollections.observableList(
+                users
+                        .stream()
+                        .map(t -> new UserInfoListViewModel(
+                                t.getId(),
+                                t.getUsername(),
+                                t.getPassword(),
+                                t.getUserInfos().getName(),
+                                t.getUserInfos().getPhone(),
+                                t.getUserInfos().getEmail(),
+                                t.getUserUsertypeid().getUsertype(),
+                                t.getApprovaldate()
                         )).collect(Collectors.toList()));
     }
 

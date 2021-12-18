@@ -3,6 +3,7 @@ package com.example.bg_tuvarna_sit_group21_library.services;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.BookRepository;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.BooksInfoListViewModel;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.LendBooksInfoListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.SubmittedFormsListViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -72,6 +73,19 @@ public class BookService {
                                 t.getGenre(),
                                 t.getIsarchived(),
                                 t.getExemplars().getStateStateid().getState()
+                        )).collect(Collectors.toList()));
+    }
+
+    public ObservableList<LendBooksInfoListViewModel> getLendBooksInfos(){
+        List<Lendbooks> lendbooks = repository.getLendBooksInfo();
+
+        return FXCollections.observableList(
+                lendbooks
+                        .stream()
+                        .map(t -> new LendBooksInfoListViewModel(
+                                t.getId(),
+                                t.getUsersUserid().getId(),
+                                t.getLenddate()
                         )).collect(Collectors.toList()));
     }
 }

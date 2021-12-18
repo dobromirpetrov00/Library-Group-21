@@ -1,7 +1,6 @@
 package com.example.bg_tuvarna_sit_group21_library.presentation.controllers;
 
 import com.example.bg_tuvarna_sit_group21_library.constants.Constants;
-import com.example.bg_tuvarna_sit_group21_library.presentation.models.BooksInfoListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.LendBooksInfoListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UserInfoListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.services.AdminService;
@@ -19,7 +18,7 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
-public class UsersInfoController {
+public class UsersInfoController2 {
     private final BookService bservice = BookService.getInstance();
     private final AdminService aservice = AdminService.getInstance();
     private static final Logger log = Logger.getLogger(BooksInfoController.class);
@@ -56,13 +55,13 @@ public class UsersInfoController {
         Stage stage2 = (Stage) goBackButton.getScene().getWindow();
         stage2.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.adminView));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.referencesView));
         Parent root = (Parent) fxmlLoader.load();
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
-        stage.setTitle("Administrator Menu");
+        stage.setTitle("References Menu");
         stage.show();
     }
 }

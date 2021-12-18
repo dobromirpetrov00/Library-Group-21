@@ -269,4 +269,22 @@ public class BookRepository {
 
         return exemplars;
     }
+
+    public List<Lendbooks> getLendBooksInfo(){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Lendbooks> lendbooks = new LinkedList<>();
+
+        try{
+            String jpql = "select t from Lendbooks t";
+            lendbooks.addAll(session.createQuery(jpql, Lendbooks.class).getResultList());
+            log.info("Got Lendbooks Info successfully");
+        } catch (Exception e){
+            log.error("Get Lendbooks Info error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+
+        return lendbooks;
+    }
 }

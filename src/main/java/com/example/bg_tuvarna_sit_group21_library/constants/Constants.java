@@ -24,6 +24,11 @@ public class Constants {
         public static final String submittedFormsView = "/com/example/bg_tuvarna_sit_group21_library/submittedFormsView.fxml";
         public static final String usersInfoView = "/com/example/bg_tuvarna_sit_group21_library/usersInfoView.fxml";
         public static final String usersRatingView = "/com/example/bg_tuvarna_sit_group21_library/usersRatingView.fxml";
+        public static final String bookInfosView2 = "/com/example/bg_tuvarna_sit_group21_library/booksInfoView2.fxml";
+        public static final String submittedFormsView2 = "/com/example/bg_tuvarna_sit_group21_library/submittedFormsView2.fxml";
+        public static final String usersInfoView2 = "/com/example/bg_tuvarna_sit_group21_library/usersInfoView2.fxml";
+        public static final String usersRatingView2 = "/com/example/bg_tuvarna_sit_group21_library/usersRatingView2.fxml";
+        public static final String referencesView = "/com/example/bg_tuvarna_sit_group21_library/referencesView.fxml";
     }
 
     public static class Configurations {

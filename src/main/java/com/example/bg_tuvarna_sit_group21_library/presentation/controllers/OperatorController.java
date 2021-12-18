@@ -31,6 +31,9 @@ public class OperatorController {
     public Button signOutReaderButton;
 
     @FXML
+    public Button referencesButton;
+
+    @FXML
     public void createReaderProfileButtonClick(ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setResizable(false);
@@ -58,21 +61,6 @@ public class OperatorController {
             }
         }
     }
-
-//    @FXML
-//    public void createReaderProfileButtonClick(ActionEvent actionEvent) throws IOException {
-//        Stage stage2 = (Stage) goBackButton.getScene().getWindow();
-//        stage2.close();
-//
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.createReaderProfileView));
-//        Parent root = (Parent) fxmlLoader.load();
-//
-//        Stage stage = new Stage();
-//        stage.setScene(new Scene(root));
-//        stage.setTitle("Create Reader Profile");
-//        stage.setResizable(false);
-//        stage.show();
-//    }
 
     @FXML
     public void goBackButtonClick(ActionEvent actionEvent) throws IOException {
@@ -130,6 +118,21 @@ public class OperatorController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Sign Out Reader");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    public void referencesButtonClick(ActionEvent actionEvent) throws IOException {
+        Stage stage2 = (Stage) referencesButton.getScene().getWindow();
+        stage2.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Constants.LoginView.referencesView));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("References Menu");
         stage.setResizable(false);
         stage.show();
     }

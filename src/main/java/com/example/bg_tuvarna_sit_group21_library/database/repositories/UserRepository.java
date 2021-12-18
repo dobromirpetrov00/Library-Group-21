@@ -197,4 +197,21 @@ public class UserRepository {
         return lastId;
     }
 
+    public List<Users> getUsersInfo(){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Users> users = new LinkedList<>();
+
+        try{
+            String jpql = "select t from Users t";
+            users.addAll(session.createQuery(jpql, Users.class).getResultList());
+            log.info("Got User Info successfully");
+        } catch (Exception e){
+            log.error("Get User Info error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+
+        return users;
+    }
 }
