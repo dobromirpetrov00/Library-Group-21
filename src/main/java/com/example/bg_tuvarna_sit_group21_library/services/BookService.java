@@ -2,6 +2,13 @@ package com.example.bg_tuvarna_sit_group21_library.services;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.BookRepository;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.BooksInfoListViewModel;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.SubmittedFormsListViewModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class BookService {
     private final BookRepository repository = BookRepository.getInstance();
@@ -46,5 +53,25 @@ public class BookService {
 
     public void archivedBook(Books book, Exemplars exemplar, Booksstored booksstored){
         repository.archiveBook(book, exemplar, booksstored);
+    }
+
+    public ObservableList<BooksInfoListViewModel> getAllBookInfo(){
+        List<Books> forms = repository.getBooksInfo();
+
+        return FXCollections.observableList(
+                forms
+                        .stream()
+                        .map(t -> new BooksInfoListViewModel(
+                                t.getId(),
+                                t.getYear(),
+                                t.getBooksstored().getTotal(),
+                                t.getBooksstored().getAvailable(),
+                                t.getBooksstored().getReadingroom(),
+                                t.getBookname(),
+                                t.getAuthor(),
+                                t.getGenre(),
+                                t.getIsarchived(),
+                                t.getExemplars().getStateStateid().getState()
+                        )).collect(Collectors.toList()));
     }
 }

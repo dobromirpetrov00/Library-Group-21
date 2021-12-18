@@ -6,16 +6,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="365.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.UsersRatingController">
+<AnchorPane prefHeight="365.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.UsersRatingController">
    <children>
-      <ImageView fitHeight="365.0" fitWidth="264.0">
+      <ImageView fitHeight="365.0" fitWidth="400.0">
          <image>
             <Image url="@../../../images/stageIcon.jpg" />
          </image>
       </ImageView>
-      <Button id="record-sales" fx:id="goBackButton" layoutX="92.0" layoutY="295.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
-      <Button id="record-sales" fx:id="getUsersRatingButton" layoutX="61.0" layoutY="214.0" mnemonicParsing="false" onAction="#getUsersRatingButtonClick" prefHeight="67.0" prefWidth="143.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Get Users Rating" />
-      <ListView fx:id="usersRatingListView" layoutX="53.0" layoutY="14.0" prefHeight="179.0" prefWidth="159.0" />
+      <Button id="record-sales" fx:id="goBackButton" layoutX="160.0" layoutY="294.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <Button id="record-sales" fx:id="getUsersRatingButton" layoutX="129.0" layoutY="211.0" mnemonicParsing="false" onAction="#getUsersRatingButtonClick" prefHeight="67.0" prefWidth="143.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Get Users Rating" />
+      <ListView fx:id="usersRatingListView" layoutX="38.0" layoutY="14.0" prefHeight="179.0" prefWidth="324.0" />
    </children>
 </AnchorPane>

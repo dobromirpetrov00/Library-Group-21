@@ -13,6 +13,6 @@ public class UsersRatingListViewModel {
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %s", id, name, rating);
+        return String.format("UserID: %s | Name: %s | Rating: %s", id, name, rating);
     }
 }

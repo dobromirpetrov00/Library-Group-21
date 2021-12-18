@@ -6,16 +6,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="365.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.SubmittedFormsController">
+<AnchorPane prefHeight="365.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bg_tuvarna_sit_group21_library.presentation.controllers.SubmittedFormsController">
    <children>
-      <ImageView fitHeight="365.0" fitWidth="264.0">
+      <ImageView fitHeight="365.0" fitWidth="500.0">
          <image>
             <Image url="@../../../images/stageIcon.jpg" />
          </image>
       </ImageView>
-      <ListView fx:id="submittedFormsListView" layoutX="53.0" layoutY="14.0" prefHeight="179.0" prefWidth="159.0" />
-      <Button id="record-sales" fx:id="getSubmittedFormsButton" layoutX="44.0" layoutY="211.0" mnemonicParsing="false" onAction="#getSubmittedFormsButtonClick" prefHeight="67.0" prefWidth="177.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Get Submitted Forms" />
-      <Button id="record-sales" fx:id="goBackButton" layoutX="92.0" layoutY="296.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <ListView fx:id="submittedFormsListView" layoutX="45.0" layoutY="14.0" prefHeight="179.0" prefWidth="412.0" />
+      <Button id="record-sales" fx:id="getSubmittedFormsButton" layoutX="162.0" layoutY="206.0" mnemonicParsing="false" onAction="#getSubmittedFormsButtonClick" prefHeight="67.0" prefWidth="177.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Get Submitted Forms" />
+      <Button id="record-sales" fx:id="goBackButton" layoutX="210.0" layoutY="289.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
    </children>
 </AnchorPane>

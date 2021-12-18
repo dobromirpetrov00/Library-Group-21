@@ -37,9 +37,6 @@ public class Books implements Serializable {
     @OneToMany(mappedBy = "bookBookid")
     private Set<Lendinfos> lendinfosSet;
 
-    /*@OneToOne(mappedBy = "bookBookid")
-    private Lendinfos lendinfos;*/
-
     public Books(){
 
     }
@@ -124,14 +121,6 @@ public class Books implements Serializable {
         this.lendinfosSet = lendinfosSet;
     }
 
-    /*public Lendinfos getLendinfos() {
-        return lendinfos;
-    }
-
-    public void setLendinfos(Lendinfos lendinfos) {
-        this.lendinfos = lendinfos;
-    }*/
-
     @Override
     public String toString() {
         return "Books{" +
@@ -146,19 +135,4 @@ public class Books implements Serializable {
                 ", lendinfosSet=" + lendinfosSet +
                 '}';
     }
-
-    /*@Override
-    public String toString() {
-        return "Books{" +
-                "id=" + id +
-                ", bookname='" + bookname + '\'' +
-                ", author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
-                ", year=" + year +
-                ", isarchived='" + isarchived + '\'' +
-                ", exemplars=" + exemplars +
-                ", booksstored=" + booksstored +
-                ", lendinfos=" + lendinfos +
-                '}';
-    }*/
 }

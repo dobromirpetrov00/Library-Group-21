@@ -15,6 +15,6 @@ public class SubmittedFormsListViewModel {
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %s | %s", formid, creationDate, userid, status);
+        return String.format("FormID: %s | Creation Date: %s | UserID: %s |  Status: %s", formid, creationDate, userid, status);
     }
 }

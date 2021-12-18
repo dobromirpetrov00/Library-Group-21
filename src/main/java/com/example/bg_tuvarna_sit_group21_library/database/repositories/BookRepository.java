@@ -7,6 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class BookRepository {
     public static BookRepository getInstance() { return BookRepository.BookRepositoryHolder.INSTANCE;}
 
@@ -247,5 +250,23 @@ public class BookRepository {
         } finally {
             transaction.commit();
         }
+    }
+
+    public List<Books> getBooksInfo(){
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Books> exemplars = new LinkedList<>();
+
+        try{
+            String jpql = "select t from Books t";
+            exemplars.addAll(session.createQuery(jpql, Books.class).getResultList());
+            log.info("Got Book Info successfully");
+        } catch (Exception e){
+            log.error("Get Book Info error: " + e.getMessage());
+        } finally {
+            transaction.commit();
+        }
+
+        return exemplars;
     }
 }
