@@ -7,6 +7,7 @@ import com.example.bg_tuvarna_sit_group21_library.database.Entities.Forms;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository;
+import com.example.bg_tuvarna_sit_group21_library.presentation.models.SubmittedFormsListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersListViewModel;
 import com.example.bg_tuvarna_sit_group21_library.database.Connect.Connection;
 import com.example.bg_tuvarna_sit_group21_library.presentation.models.UsersRatingListViewModel;
@@ -29,6 +30,20 @@ public class AdminService {
 
     private static class AdminServiceHolder {
         public static final AdminService INSTANCE = new AdminService();
+    }
+
+    public ObservableList<SubmittedFormsListViewModel> getSubmForms(){
+        List<Forms> forms = repository.getSubmittedFormsAll();
+
+        return FXCollections.observableList(
+                forms
+                        .stream()
+                        .map(t -> new SubmittedFormsListViewModel(
+                                t.getId(),
+                                t.getCreationdate(),
+                                t.getUsersUserid().getId(),
+                                t.getUsersUserid().getStatusStatusid().getStatus()
+                        )).collect(Collectors.toList()));
     }
 
     public ObservableList<UsersRatingListViewModel> getAllUsersRating(){
