@@ -12,8 +12,9 @@ public class Connection {
     static {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
+            log.info("SessionFactory created successfully");
         } catch (Throwable ex) {
-            log.error("Initial SessionFactory created failed " + ex);
+            log.error("Initial SessionFactory creation failed " + ex);
         }
     }
 
