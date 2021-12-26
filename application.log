@@ -545,3 +545,5 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get Users Rating error: Cannot create TypedQuery for query with more than one return using requested result type [com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos]
 [JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.database.repositories.UserRepository  - Get Users Rating error: Cannot create TypedQuery for query with more than one return using requested result type [com.example.bg_tuvarna_sit_group21_library.database.Entities.UserInfos]
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.AdminLoginController  - Wrong username or password
+[JavaFX Application Thread] ERROR com.example.bg_tuvarna_sit_group21_library.presentation.controllers.OperatorLoginController  - Wrong username or password

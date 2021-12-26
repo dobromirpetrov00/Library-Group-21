@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -15,8 +16,14 @@
             <Image url="@../../../images/adminView.jpg" />
          </image>
       </ImageView>
-      <Button id="record-sales" fx:id="giveBookButton" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" onAction="#giveBookButtonClick" prefHeight="72.0" prefWidth="145.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Give Book" />
-      <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="275.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back" />
+      <Button id="record-sales" fx:id="giveBookButton" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" onAction="#giveBookButtonClick" prefHeight="72.0" prefWidth="145.0" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Give Book">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button id="record-sales" fx:id="goBackButton" layoutX="289.0" layoutY="275.0" mnemonicParsing="false" onAction="#goBackButtonClick" styleClass="record-sales" stylesheets="@../../../CSS/loginButton.css" text="Go Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextField fx:id="userIdField" layoutX="78.0" layoutY="127.0" promptText="Enter User ID" />
       <TextField fx:id="lendDateField" layoutX="434.0" layoutY="127.0" promptText="Enter Date of Lend" />
       <TextField fx:id="bookIdField" layoutX="255.0" layoutY="127.0" promptText="Enter Book ID" />
