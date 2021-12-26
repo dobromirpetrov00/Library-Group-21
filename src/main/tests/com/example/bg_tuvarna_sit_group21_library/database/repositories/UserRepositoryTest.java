@@ -1,8 +1,14 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Books;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Lendbooks;
+import com.example.bg_tuvarna_sit_group21_library.database.Entities.Lendinfos;
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.Users;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,23 +34,31 @@ class UserRepositoryTest {
         userIfExists.setPassword("1234");
     }
 
+    // DONE
     @Test
     void getSubmittedFormsAll() {
+        assertNotNull(userRepository.getSubmittedFormsAll());
     }
 
+    // DONE
     @Test
     void getUsersRatingAll() {
+        assertNotNull(userRepository.getUsersRatingAll());
     }
 
+    // DONE
     @Test
     void getAllUsers() {
+        assertNotEquals(null,userRepository.getAllUsers());
     }
 
+    // DONE
     @Test
     void getAllNeedToBeArchived() {
+        assertNotNull(userRepository.getAllNeedToBeArchived());
     }
 
-    @Test
+/*    @Test
     void lendBook() {
     }
 
@@ -58,7 +72,7 @@ class UserRepositoryTest {
 
     @Test
     void deleteReader() {
-    }
+    }*/
 
     // DONE
     @Test
@@ -74,5 +88,6 @@ class UserRepositoryTest {
 
     @Test
     void getUsersInfo() {
+        assertNotNull(userRepository.getUsersInfo());
     }
 }

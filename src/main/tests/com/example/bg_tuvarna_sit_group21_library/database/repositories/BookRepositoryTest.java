@@ -1,17 +1,15 @@
 package com.example.bg_tuvarna_sit_group21_library.database.repositories;
 
 import com.example.bg_tuvarna_sit_group21_library.database.Entities.*;
-import org.hibernate.query.Query;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookRepositoryTest {
-    //private Query query;
     private boolean VarAlreadySetToArchiveLater, VarIfLeftEnough, VarIfExists, VarIfArchived, VarIfLendbookIDExists;
     private int VarGetLendBookId;
     private BookRepository bookRepository;
-    private Books bookAlreadySetToArchiveLater, bookIfLeftEnough, bookIfExists, bookIfArchived;
+    private Books bookAlreadySetToArchiveLater, bookIfLeftEnough, bookIfExists, bookIfArchived, bookArchiveBookForLater;
     private Booksstored booksstoredIfLeftEnough;
     private Bookstates bookstatesIfArchived;
     private Lendbooks lendbookIfLendbookIDExists, lendbookGetLendBookId;
@@ -55,6 +53,11 @@ class BookRepositoryTest {
         userGetLendBookId.setId(2);
         lendbookGetLendBookId = new Lendbooks();
         lendbookGetLendBookId.setLenddate(11102021);
+
+        //archiveBookForLater
+        bookArchiveBookForLater = new Books();
+        bookArchiveBookForLater.setId(1);
+
     }
 
     // DONE
@@ -63,9 +66,8 @@ class BookRepositoryTest {
         assertEquals(VarAlreadySetToArchiveLater,bookRepository.alreadySetToArchiveLater(bookAlreadySetToArchiveLater));
     }
 
-    @Test
+    /*@Test
     void archiveBookForLater() {
-
     }
 
     @Test
@@ -74,7 +76,7 @@ class BookRepositoryTest {
 
     @Test
     void removeBookFromAvailable() {
-    }
+    }*/
 
     // DONE
     @Test
@@ -94,13 +96,13 @@ class BookRepositoryTest {
         assertEquals(VarIfArchived,bookRepository.ifArchived(bookIfArchived,bookstatesIfArchived));
     }
 
-    @Test
+    /*@Test
     void archiveBook() {
     }
 
     @Test
     void deleteBook() {
-    }
+    }*/
 
     // DONE
     @Test
@@ -114,19 +116,23 @@ class BookRepositoryTest {
         assertEquals(VarGetLendBookId,bookRepository.getLendBookId(userGetLendBookId,lendbookGetLendBookId));
     }
 
-    @Test
+    /*@Test
     void removeBookUserLend() {
     }
 
     @Test
     void addBookToAvailable() {
-    }
+    }*/
 
+    // DONE
     @Test
     void getBooksInfo() {
+        assertNotNull(bookRepository.getBooksInfo());
     }
 
+    // DONE
     @Test
     void getLendBooksInfo() {
+        assertNotNull(bookRepository.getLendBooksInfo());
     }
 }
